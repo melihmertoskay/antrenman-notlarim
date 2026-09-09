@@ -7,7 +7,7 @@ Canlı site: https://melihmertoskay.github.io/antrenman-notlarim/
 ## Bölümler
 
 - **Ana Sayfa:** Diğer dört bölüme yönlendirir.
-- **Program:** Günlere göre hedeflenen antrenmanları gösterir.
+- **Program:** Günlere göre hedeflenen antrenmanları gösterir. Aktif plan 9–26 Eylül 2026 arasındaki üç haftayı kapsar; ilk hafta 10 günlük aradan kontrollü dönüş olarak düzenlenmiştir.
 - **Günlük:** Yapılan egzersizlerin tarih, antrenman, yük, set/tekrar ve not kayıtlarını listeler; kayıt ekleme, düzenleme ve silme arayüzünü içerir.
 - **Antrenmanlar:** Salon, ekipmansız ve yüzme antrenman kartlarını listeler.
 - **Egzersizler:** Kodlu egzersiz kartlarını; yapılış, çalışan kaslar, dikkat noktaları, görsel ve geçmiş yük bilgisiyle gösterir.
