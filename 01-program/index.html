@@ -89,37 +89,37 @@
 
     const antrenmanlar={
       S1:{
-        not:`<p>Salonda itiş günü. Günlükte 16 Ağustos'ta kaydettiğin ağırlıklardan devam et.</p>
+        not:`<p>Salonda itiş günü. 26 Ağustos'taki son kayıtlarından devam et.</p>
           <ul>
             <li><span class="kv">Bench press:</span> her elde 10 kg</li>
-            <li><span class="kv">Lateral raise:</span> her elde 4 kg</li>
-            <li><span class="kv">Incline press:</span> her elde 8 kg</li>
-            <li><span class="kv">Shoulder press:</span> her elde 7,5 kg</li>
+            <li><span class="kv">Lateral raise:</span> her elde 7 kg</li>
+            <li><span class="kv">Incline press:</span> her elde 10 kg</li>
+            <li><span class="kv">Shoulder press:</span> her elde 7 kg</li>
             <li><span class="kv">Triceps extension:</span> tek dambıl 10 kg</li>
           </ul>
-          <p>Son iki tekrarda zorlanmıyorsan haftalık 2,5 kg ekle.</p>`,
+          <p>İlk dönüş haftasında ağırlık artırma. Sonraki S1'de bütün setler yine rahat kalırsa yalnızca bench press ve incline press ağırlığını bir kademe artır.</p>`,
         alt:[
           {kod:"E1",metin:"Salona gidemiyorsan bunu tercih et — aynı kas grubu, ekipmansız."},
           {kod:"Y2",metin:"Yüzmek istersen tempo olarak en yakın gün budur."}
         ]},
       S2:{
-        not:`<p>Salonda çekiş günü.</p>
+        not:`<p>Salonda çekiş günü. 22 Ağustos'taki son kayıtlarından devam et.</p>
           <ul>
             <li><span class="kv">Tek kol row:</span> 12,5 kg</li>
-            <li><span class="kv">Reverse fly:</span> her elde 4 kg</li>
-            <li><span class="kv">Pullover:</span> tek dambıl 10 kg</li>
-            <li><span class="kv">Biceps curl:</span> her elde 7,5 kg</li>
-            <li><span class="kv">Hammer curl:</span> her elde 7,5 kg</li>
+            <li><span class="kv">Reverse fly:</span> her elde 7 kg</li>
+            <li><span class="kv">Pullover:</span> bilek ağrısı nedeniyle tek dambıl 10 kg ile kontrollü dene</li>
+            <li><span class="kv">Biceps curl:</span> her elde 7 kg</li>
+            <li><span class="kv">Hammer curl:</span> her elde 7 kg</li>
           </ul>
-          <p>Son iki tekrarda zorlanmıyorsan haftalık 2,5 kg ekle.</p>`,
+          <p>Pullover sırasında bilek ağrısı tekrarlarsa hareketi bırak; o gün ağırlık artırma.</p>`,
         alt:[
           {kod:"E4",metin:"Salona gidemiyorsan bunu tercih et — bant ile aynı kas grubu."},
           {kod:"Y2",metin:"Yüzmek istersen tempo olarak en yakın gün budur."}
         ]},
       S3:{
-        not:`<p>Salonda bacak günü. Deadlift dışında tamamen dambılla.</p>
+        not:`<p>Salonda bacak günü. Deadlift dışında tamamen dambılla. 21 Ağustos'taki son kayıtlarından devam et.</p>
           <ul>
-            <li><span class="kv">Goblet squat:</span> tek dambıl 14 kg</li>
+            <li><span class="kv">Goblet squat:</span> tek dambıl 15 kg</li>
             <li><span class="kv">Deadlift:</span> 40 kg, 3 × 5 — dambılla aynı ağırlıkta yapılamayacak tek hareket, bunun için bir barbell gerekir</li>
             <li><span class="kv">Hip thrust:</span> tek dambıl 15 kg</li>
             <li><span class="kv">Bulgarian split squat:</span> her bacak 5 kg</li>
@@ -131,13 +131,13 @@
           {kod:"Y1",metin:"Yüzmek istersen bacaklar için en hafif gün budur."}
         ]},
       S4:{
-        not:`<p>Salonda tam vücut, tamamen dambılla — vaktin azsa ya da bir süredir ara verdiysen bu kart tek başına yeter.</p>
+        not:`<p>10 günlük aradan dönüş için tam vücut çalışması. Bu antrenmanda ağırlık artırma ve her sette 2–3 tekrar daha yapabilecekmiş gibi bırak.</p>
           <ul>
-            <li><span class="kv">Goblet squat:</span> tek dambıl 14 kg</li>
+            <li><span class="kv">Goblet squat:</span> tek dambıl 15 kg</li>
             <li><span class="kv">Bench press:</span> her elde 10 kg</li>
             <li><span class="kv">Tek kol row:</span> 12,5 kg</li>
             <li><span class="kv">Romanian deadlift:</span> her elde 10 kg</li>
-            <li><span class="kv">Shoulder press:</span> her elde 7,5 kg</li>
+            <li><span class="kv">Shoulder press:</span> her elde 7 kg</li>
           </ul>`,
         alt:[
           {kod:"E3",metin:"Salona gidemiyorsan bunu tercih et — aynı üç örüntü, ekipmansız."},
@@ -199,18 +199,16 @@
         alt:[{kod:null,metin:"Havuz kapalıysa, o hafta kullanılmayan bir ev kartını hafif tempoda yap. Kardiyoyu tam karşılamaz ama haftayı boş bırakmamış olursun."}]}
     };
 
-    // Pazartesi ev · Çarşamba ve Cuma salon · Cumartesi havuz.
-    // Salon günlerinde ikişer bölge çalışıyor, üçüncüsü o hafta eve kalıyor — dönüşümlü.
+    // 9 Eylül'de 10 günlük aradan dönüş; ardından Pazartesi ev, Çarşamba ve Cuma salon, Cumartesi havuz.
     const plan=[
-      {ev:"E4",salonA:"S1",salonB:"S3",yuzme:"Y1"},
-      {ev:"E2",salonA:"S2",salonB:"S1",yuzme:"Y2"},
-      {ev:"E1",salonA:"S3",salonB:"S2",yuzme:"Y3"},
-      {ev:"E4",salonA:"S1",salonB:"S3",yuzme:"Y1"}
+      {ev:null,salonA:"S4",salonB:"S1",yuzme:"Y1"},
+      {ev:"E4",salonA:"S3",salonB:"S2",yuzme:"Y2"},
+      {ev:"E2",salonA:"S1",salonB:"S3",yuzme:"Y3"}
     ];
     const OFSET={ev:0,salonA:2,salonB:4,yuzme:5};
-    const ILERLEME="3–4. hafta: 1–2. haftada günlüğe yazdığın ağırlığın son setinde 2 fazla tekrar yapabildiysen 2–2,5 kg artır.";
+    const ILERLEME="3. hafta: Önceki antrenmanın bütün setleri kontrollü ve rahat tamamlandıysa yalnızca bir hareketin ağırlığını bir kademe artır.";
 
-    const basla=new Date(2026,7,17);
+    const basla=new Date(2026,8,7);
     const kutu=document.getElementById("weeks");
 
     plan.forEach((hafta,hi)=>{
@@ -219,7 +217,7 @@
         {tur:"salonA",kod:hafta.salonA},
         {tur:"salonB",kod:hafta.salonB},
         {tur:"yuzme",kod:hafta.yuzme}
-      ].map(g=>{
+      ].filter(g=>g.kod).map(g=>{
         const t=new Date(basla);
         t.setDate(basla.getDate()+hi*7+OFSET[g.tur]);
         return {...g,tarih:t};
