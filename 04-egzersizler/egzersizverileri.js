@@ -310,3 +310,8 @@ EGZERSIZ_GORSELLERI["Dambıl reverse fly"]="/antrenman-notlarim/04-egzersizler/g
 EGZERSIZ_GORSELLERI["Dambıl pullover"]="/antrenman-notlarim/04-egzersizler/gorseller/dambil-pullover.png";
 EGZERSIZ_GORSELLERI["Dambıl biceps curl"]="/antrenman-notlarim/04-egzersizler/gorseller/dambil-biceps-curl.png";
 EGZERSIZ_GORSELLERI["Dambıl hammer curl"]="/antrenman-notlarim/04-egzersizler/gorseller/dambil-hammer-curl.png";
+
+// S4 antrenmanındaki eksik egzersiz görselleri
+EGZERSIZ_GORSELLERI["Genel ısınma"]="/antrenman-notlarim/04-egzersizler/gorseller/genel-isinma.webp";
+EGZERSIZ_GORSELLERI["Dambıl Romanian deadlift"]="/antrenman-notlarim/04-egzersizler/gorseller/dambil-romanian-deadlift.webp";
+EGZERSIZ_GORSELLERI["Dambıl shoulder press"]="/antrenman-notlarim/04-egzersizler/gorseller/dambil-shoulder-press.webp";
