@@ -25,8 +25,8 @@
   <script>
     const $=id=>document.getElementById(id),days=$("days"),modal=$("modal"),form=$("form");
     function doldur(){
-      $("antrenman").innerHTML=Object.entries(ANTRENMAN_ADI).map(([k,a])=>\`<option value="\${k}">\${k} - \${a}</option>\`).join("");
-      $("exercise").innerHTML=Object.keys(EGZERSIZLER).sort((a,b)=>(EGZERSIZ_KODLARI[a]||"Z").localeCompare(EGZERSIZ_KODLARI[b]||"Z",undefined,{numeric:true})).map(a=>\`<option value="\${gunlukKacis(a)}">\${EGZERSIZ_KODLARI[a]||"–"} - \${gunlukKacis(a)}</option>\`).join("");
+      $("antrenman").innerHTML=Object.entries(ANTRENMAN_ADI).map(([k,a])=>`<option value="${k}">${k} - ${a}</option>`).join("");
+      $("exercise").innerHTML=Object.keys(EGZERSIZLER).sort((a,b)=>(EGZERSIZ_KODLARI[a]||"Z").localeCompare(EGZERSIZ_KODLARI[b]||"Z",undefined,{numeric:true})).map(a=>`<option value="${gunlukKacis(a)}">${EGZERSIZ_KODLARI[a]||"–"} - ${gunlukKacis(a)}</option>`).join("");
     }
     function render(){
       const liste=gunlukKayitlariniGetir().sort((a,b)=>b.gun.localeCompare(a.gun));
@@ -36,8 +36,8 @@
       days.innerHTML=gunler.map(gun=>{
         const kayitlar=gruplar[gun],kodlar=[...new Set(kayitlar.map(x=>x.antrenman))],notlar=[...new Set(kayitlar.map(x=>x.aciklama).filter(Boolean))];
         const baslik=kodlar.length===1?kodlar[0]:"G";
-        const meta=kodlar.map(k=>\`\${k} · \${ANTRENMAN_ADI[k]||""}\`).join(" · ");
-        return \`<article class="day-card"><header class="card-header"><div class="card-code">\${gunlukKacis(baslik)}</div><div><h1>\${gunlukTarihEtiketi(gun)}</h1><p class="card-meta">\${gunlukKacis(meta)}</p></div></header><div class="table-wrap"><table><thead><tr><th>Sıra</th><th>Hareket</th><th>Ağırlık</th><th>Tekrar</th></tr></thead><tbody>\${kayitlar.map((k,i)=>\`<tr><td>\${i+1}</td><td><div class="exercise">\${gunlukKacis(egzersizAdi(k.egzersiz))}</div><div class="record-actions"><button class="text-button edit" data-id="\${gunlukKacis(k.id)}">Düzenle</button><button class="text-button danger delete" data-id="\${gunlukKacis(k.id)}">Sil</button></div></td><td class="weight">\${gunlukKacis(k.agirlik||"—")}</td><td class="target">\${gunlukKacis(k.setTekrar||"—")}</td></tr>\`).join("")}</tbody></table></div>\${notlar.length?\`<div class="notes"><span class="notes-label">Notlar</span>\${notlar.map(n=>\`<p>\${gunlukKacis(n)}</p>\`).join("")}</div>\`:""}</article>\`;
+        const meta=kodlar.map(k=>`${k} · ${ANTRENMAN_ADI[k]||""}`).join(" · ");
+        return `<article class="day-card"><header class="card-header"><div class="card-code">${gunlukKacis(baslik)}</div><div><h1>${gunlukTarihEtiketi(gun)}</h1><p class="card-meta">${gunlukKacis(meta)}</p></div></header><div class="table-wrap"><table><thead><tr><th>Sıra</th><th>Hareket</th><th>Ağırlık</th><th>Tekrar</th></tr></thead><tbody>${kayitlar.map((k,i)=>`<tr><td>${i+1}</td><td><div class="exercise">${gunlukKacis(egzersizAdi(k.egzersiz))}</div><div class="record-actions"><button class="text-button edit" data-id="${gunlukKacis(k.id)}">Düzenle</button><button class="text-button danger delete" data-id="${gunlukKacis(k.id)}">Sil</button></div></td><td class="weight">${gunlukKacis(k.agirlik||"—")}</td><td class="target">${gunlukKacis(k.setTekrar||"—")}</td></tr>`).join("")}</tbody></table></div>${notlar.length?`<div class="notes"><span class="notes-label">Notlar</span>${notlar.map(n=>`<p>${gunlukKacis(n)}</p>`).join("")}</div>`:""}</article>`;
       }).join("");
     }
     let gunlukPenceresiAcik=false;
