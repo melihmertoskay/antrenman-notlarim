@@ -8,7 +8,7 @@ Canlı site: https://melihmertoskay.github.io/antrenman-notlarim/
 
 - **Ana Sayfa:** Diğer dört bölüme yönlendirir.
 - **Program:** Günlere göre hedeflenen antrenmanları gösterir. Aktif plan 9–26 Eylül 2026 arasındaki üç haftayı kapsar; ilk hafta 10 günlük aradan kontrollü dönüş olarak düzenlenmiştir.
-- **Günlük:** Yapılan egzersizlerin tarih, antrenman, yük, set/tekrar ve not kayıtlarını listeler; kayıt ekleme, düzenleme ve silme arayüzünü içerir.
+- **Günlük:** Her antrenman gününü tarih başlıklı bir kartta; egzersiz, yük, set/tekrar ve notlarıyla gösterir. Kayıt ekleme, düzenleme ve silme arayüzünü içerir.
 - **Antrenmanlar:** Salon, ekipmansız ve yüzme antrenman kartlarını listeler.
 - **Egzersizler:** Kodlu egzersiz kartlarını; yapılış, çalışan kaslar, dikkat noktaları, görsel ve geçmiş yük bilgisiyle gösterir.
 
@@ -56,7 +56,7 @@ Aynı kayıt üç görünümde kullanılır:
 
 GitHub Pages statik olduğu için arayüzden girilen değişiklikler tarayıcının `localStorage` alanında saklanır. Aynı tarayıcıda kalır; cihazlar arasında eşitlenmez. Cihazlar arası eşitleme için ileride çevrim içi veritabanı ve kullanıcı girişi eklenmelidir.
 
-Repoya kalıcı olarak eklenen günlük kayıtları `GUNLUK_BASLANGIC` dizisinde tutulur. `GUNLUK_BASLANGIC_SURUMU` değiştiğinde yeni kayıtlar, tarayıcıdaki mevcut kişisel kayıtlar silinmeden birleştirilir. Başlangıç veri paketi en son 9 Eylül 2026 tarihli S4 antrenmanıyla güncellenmiştir.
+Repoya kalıcı olarak eklenen günlük kayıtları `GUNLUK_BASLANGIC` dizisinde tutulur. `GUNLUK_BASLANGIC_SURUMU` değiştiğinde yeni kayıtlar, tarayıcıdaki mevcut kişisel kayıtlar silinmeden birleştirilir. Başlangıç veri paketi en son 12 Eylül 2026 tarihli S3 antrenmanıyla güncellenmiştir.
 
 ## Egzersiz adlandırma standardı
 
