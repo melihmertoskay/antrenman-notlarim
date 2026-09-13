@@ -22,7 +22,8 @@
     function gercektenKapat(){if(!acik)return;acik=false;modal.classList.remove("open");document.body.classList.remove("antrenman-modal-acik");iframeYukle("about:blank")}
     function ac(kod){
       if(!kod)return;
-      iframeYukle(yol+"?gomulu=1#"+encodeURIComponent(kod));
+      const ayirici=yol.includes("?")?"&":"?";
+      iframeYukle(yol+ayirici+"gomulu=1&v=20260913-s1-2#"+encodeURIComponent(kod));
       modal.classList.add("open");document.body.classList.add("antrenman-modal-acik");acik=true;
       history.pushState({antrenmanPenceresi:true,kod},"",location.pathname+location.search+"#antrenman="+encodeURIComponent(kod));
       closeButton.focus();
