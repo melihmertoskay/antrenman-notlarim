@@ -30,11 +30,15 @@ const GUNLUK_BASLANGIC=[
   {id:"2026-09-09-s4-dambil-bench-press",gun:"2026-09-09",antrenman:"S4",egzersiz:"Dambıl bench press",agirlik:"Her elde 12,5 kg",setTekrar:"3 × 10",aciklama:""},
   {id:"2026-09-09-s4-tek-kol-dambil-row",gun:"2026-09-09",antrenman:"S4",egzersiz:"Tek kol dambıl row",agirlik:"12,5 kg",setTekrar:"3 × 10",aciklama:""},
   {id:"2026-09-09-s4-dambil-romanian-deadlift",gun:"2026-09-09",antrenman:"S4",egzersiz:"Dambıl Romanian deadlift",agirlik:"Her elde 10 kg",setTekrar:"3 × 10",aciklama:""},
-  {id:"2026-09-09-s4-dambil-shoulder-press",gun:"2026-09-09",antrenman:"S4",egzersiz:"Dambıl shoulder press",agirlik:"Her elde 7 kg",setTekrar:"3 × 10",aciklama:""}
+  {id:"2026-09-09-s4-dambil-shoulder-press",gun:"2026-09-09",antrenman:"S4",egzersiz:"Dambıl shoulder press",agirlik:"Her elde 7 kg",setTekrar:"3 × 10",aciklama:""},
+  {id:"2026-09-12-s3-goblet-squat",gun:"2026-09-12",antrenman:"S3",egzersiz:"Goblet squat",agirlik:"15 kg",setTekrar:"3 × 10",aciklama:""},
+  {id:"2026-09-12-s3-deadlift",gun:"2026-09-12",antrenman:"S3",egzersiz:"Deadlift",agirlik:"40 kg",setTekrar:"3 × 10",aciklama:""},
+  {id:"2026-09-12-s3-dambil-hip-thrust",gun:"2026-09-12",antrenman:"S3",egzersiz:"Dambıl hip thrust",agirlik:"15 kg",setTekrar:"3 × 10",aciklama:""},
+  {id:"2026-09-12-s3-bulgarian-split-squat",gun:"2026-09-12",antrenman:"S3",egzersiz:"Bulgarian split squat",agirlik:"5 kg",setTekrar:"Her bacak 3 × 10",aciklama:"Ortalama zorlukta geçti."}
 ];
 
 const GUNLUK_DEPOLAMA_ANAHTARI="antrenman-notlarim-gunluk-v1";
-const GUNLUK_BASLANGIC_SURUMU="2026-09-09-6";
+const GUNLUK_BASLANGIC_SURUMU="2026-09-12-7";
 const GUNLUK_SURUM_ANAHTARI=GUNLUK_DEPOLAMA_ANAHTARI+"-baslangic-surumu";
 function gunlukKopyala(deger){return JSON.parse(JSON.stringify(deger))}
 function gunlukKayitlariniGetir(){
