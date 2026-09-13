@@ -315,3 +315,9 @@ EGZERSIZ_GORSELLERI["Dambıl hammer curl"]="/antrenman-notlarim/04-egzersizler/g
 EGZERSIZ_GORSELLERI["Genel ısınma"]="/antrenman-notlarim/04-egzersizler/gorseller/genel-isinma.webp";
 EGZERSIZ_GORSELLERI["Dambıl Romanian deadlift"]="/antrenman-notlarim/04-egzersizler/gorseller/dambil-romanian-deadlift.webp";
 EGZERSIZ_GORSELLERI["Dambıl shoulder press"]="/antrenman-notlarim/04-egzersizler/gorseller/dambil-shoulder-press.webp";
+
+// S1 antrenmanındaki eksik egzersiz görselleri
+EGZERSIZ_GORSELLERI["Omuz ve kol ısınması"]="/antrenman-notlarim/04-egzersizler/gorseller/omuz-ve-kol-isinmasi.webp";
+EGZERSIZ_GORSELLERI["Dambıl lateral raise"]="/antrenman-notlarim/04-egzersizler/gorseller/dambil-lateral-raise.webp";
+EGZERSIZ_GORSELLERI["Incline dambıl press"]="/antrenman-notlarim/04-egzersizler/gorseller/incline-dambil-press.webp";
+EGZERSIZ_GORSELLERI["Dambıl overhead triceps extension"]="/antrenman-notlarim/04-egzersizler/gorseller/dambil-overhead-triceps-extension.webp";
