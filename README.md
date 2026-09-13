@@ -70,6 +70,8 @@ Egzersiz görselleri başlangıç ve bitiş pozisyonlarını, hareket yönünü 
 
 S1, S2, S3 ve S4 antrenmanlarındaki bütün egzersiz kartları görselleştirilmiştir. Aynı egzersiz birden fazla antrenmanda bulunuyorsa mevcut görsel yeniden kullanılır.
 
+Tarayıcıların eski görsel eşlemelerini önbellekte tutmaması için `egzersizverileri.js` bağlantıları sürüm parametresiyle yüklenir.
+
 ## Popup davranışı
 
 Program ve Antrenmanlar sayfasındaki bir antrenmana basıldığında antrenman kartı popup olarak açılır. Geri tuşu önce açık egzersiz kartını, ardından antrenman popup'ını kapatır. Programdaki bugünün antrenman düğmesi kategori renginde, alternatifler nötr gri gösterilir.
