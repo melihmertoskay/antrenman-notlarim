@@ -56,7 +56,7 @@ Aynı kayıt üç görünümde kullanılır:
 
 GitHub Pages statik olduğu için arayüzden girilen değişiklikler tarayıcının `localStorage` alanında saklanır. Aynı tarayıcıda kalır; cihazlar arasında eşitlenmez. Cihazlar arası eşitleme için ileride çevrim içi veritabanı ve kullanıcı girişi eklenmelidir.
 
-Repoya kalıcı olarak eklenen günlük kayıtları `GUNLUK_BASLANGIC` dizisinde tutulur. `GUNLUK_BASLANGIC_SURUMU` değiştiğinde yeni kayıtlar, tarayıcıdaki mevcut kişisel kayıtlar silinmeden birleştirilir. Başlangıç veri paketi en son 12 Eylül 2026 tarihli S3 antrenmanıyla güncellenmiştir.
+Repoya kalıcı olarak eklenen günlük kayıtları `GUNLUK_BASLANGIC` dizisinde tutulur. `GUNLUK_BASLANGIC_SURUMU` değiştiğinde yeni kayıtlar, tarayıcıdaki mevcut kişisel kayıtlar silinmeden birleştirilir. Başlangıç veri paketi en son 13 Eylül 2026 tarihli S1 antrenmanıyla güncellenmiştir.
 
 ## Egzersiz adlandırma standardı
 
@@ -70,7 +70,7 @@ Egzersiz görselleri başlangıç ve bitiş pozisyonlarını, hareket yönünü 
 
 S1, S2, S3 ve S4 antrenmanlarındaki bütün egzersiz kartları görselleştirilmiştir. Aynı egzersiz birden fazla antrenmanda bulunuyorsa mevcut görsel yeniden kullanılır.
 
-Tarayıcıların eski görsel eşlemelerini önbellekte tutmaması için `egzersizverileri.js` bağlantıları sürüm parametresiyle yüklenir.
+Tarayıcıların eski görsel eşlemelerini, günlük verilerini veya popup içindeki antrenman sayfasını önbellekte tutmaması için ilgili dosya bağlantıları sürüm parametresiyle yüklenir.
 
 ## Popup davranışı
 
