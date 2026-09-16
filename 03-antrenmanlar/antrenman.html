@@ -18,8 +18,9 @@
     h1{margin:0 0 4px;font-size:clamp(1.28rem,4vw,1.7rem);line-height:1.15}.card-meta{margin:0;color:var(--muted);font-size:.84rem}.table-wrap{overflow-x:auto}
     table{width:100%;border-collapse:collapse;table-layout:fixed}th{padding:11px 12px;background:#f6f4ee;color:var(--muted);font-size:.69rem;letter-spacing:.06em;text-align:left;text-transform:uppercase}
     td{padding:17px 12px;border-top:1px solid #ebe8e0;vertical-align:middle;font-size:.94rem}tbody tr:first-child td{border-top:0}
-    th:nth-child(1),td:nth-child(1){width:48px;color:var(--muted);text-align:center}th:nth-child(2),td:nth-child(2){width:92px}th:nth-child(4),td:nth-child(4){width:105px}
-    .time{color:var(--accent);font-size:.84rem;font-weight:800;white-space:nowrap}.exercise{font-weight:650}.target{font-weight:800;white-space:nowrap}
+    th:nth-child(1),td:nth-child(1){width:48px;color:var(--muted);text-align:center}th:nth-child(2),td:nth-child(2){width:92px}th:nth-child(4),td:nth-child(4){width:94px}th:nth-child(5),td:nth-child(5){width:118px}
+    .weight-col{display:none}.salon-karti .weight-col{display:table-cell}
+    .time{color:var(--accent);font-size:.84rem;font-weight:800;white-space:nowrap}.exercise{font-weight:650}.target{font-weight:800;white-space:nowrap}.last-weight{font-size:.82rem;font-weight:700;line-height:1.35}
     .card-extras{border-top:1px solid var(--line);padding:4px 20px 12px}.card-extras details{border-bottom:1px solid #ebe8e0}.card-extras details:last-child{border-bottom:0}
     .card-extras > details > summary{padding:13px 2px;color:var(--accent);font-size:.86rem;font-weight:400;list-style:none;cursor:pointer}.card-extras > details > summary::-webkit-details-marker{display:none}.card-extras > details > summary::before{content:"+ ";}.card-extras > details[open] > summary::before{content:"− "}
     .extra-content{padding:1px 2px 17px;color:#4d514b;font-size:.88rem;line-height:1.6}.extra-content p{margin:0 0 10px}.extra-content p:last-child{margin-bottom:0}.empty{color:var(--muted)}
@@ -39,7 +40,7 @@
     .modal-header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px;border-bottom:1px solid var(--line)}
     .modal-header h2{margin:0;font-size:1.2rem}.modal-close{display:grid;width:36px;height:36px;place-items:center;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--text);font-size:1.25rem;cursor:pointer}
     .modal-body{padding:20px}.exercise-image{display:block;width:100%;height:auto;margin:0 0 20px;border:1px solid var(--line);border-radius:12px;background:#faf8f1}.modal-section{margin-bottom:18px}.modal-section:last-child{margin-bottom:0}.modal-section h3{margin:0 0 5px;color:var(--accent);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}.modal-section p{margin:0;line-height:1.6}.coming-soon{margin:0;color:var(--muted)}
-    @media(max-width:560px){main{margin-top:20px}.card-header{padding:18px}th{padding:9px 7px;font-size:.62rem}td{padding:15px 7px;font-size:.86rem}th:nth-child(1),td:nth-child(1){width:34px}th:nth-child(2),td:nth-child(2){width:74px}th:nth-child(4),td:nth-child(4){width:79px}.time{font-size:.76rem}.target{white-space:normal}}
+    @media(max-width:560px){main{margin-top:20px}.card-header{padding:18px}th{padding:9px 6px;font-size:.6rem}td{padding:14px 6px;font-size:.83rem}th:nth-child(1),td:nth-child(1){width:32px}th:nth-child(2),td:nth-child(2){width:66px}th:nth-child(4),td:nth-child(4){width:68px}th:nth-child(5),td:nth-child(5){width:88px}.time{font-size:.72rem}.target{white-space:normal}.last-weight{font-size:.73rem}}
   
     body.gomulu .topbar{display:none}
     body.gomulu main{width:min(100% - 12px,760px);margin:6px auto 20px;padding-top:46px}
@@ -59,7 +60,7 @@
   </header>
   <main><article class="card">
     <header class="card-header"><div class="card-code" id="cardCode">S1</div><div><h1 id="cardTitle"></h1><p class="card-meta" id="cardMeta"></p></div></header>
-    <div class="table-wrap"><table><thead><tr><th>Sıra</th><th>Süre</th><th>Hareket</th><th>Tekrar</th></tr></thead><tbody id="workoutRows"></tbody></table></div>
+    <div class="table-wrap"><table><thead><tr><th>Sıra</th><th>Süre</th><th>Hareket</th><th>Tekrar</th><th class="weight-col">Son ağırlık</th></tr></thead><tbody id="workoutRows"></tbody></table></div>
     <div class="card-extras">
       <details id="journalDetails"><summary>Antrenman günlüğü</summary><div class="extra-content" id="journalContent"></div></details>
       <details id="aboutDetails"><summary>Antrenman hakkında</summary><div class="extra-content" id="aboutContent"></div></details>
@@ -120,13 +121,21 @@
     function gunlukIcerigi(liste){
       return `<ul>${liste.map(e=>`<li>${gunlukKacis(egzersizAdi(e.egzersiz))}: ${gunlukKacis(e.agirlik||"ağırlık yok")}${e.setTekrar?`, ${gunlukKacis(e.setTekrar)}`:""}${e.aciklama?` — ${gunlukKacis(e.aciklama)}`:""}</li>`).join("")}</ul>`;
     }
+    function sonAgirlik(egzersiz,liste){
+      if(egzersiz.toLocaleLowerCase("tr-TR").includes("ısınma"))return "—";
+      const ad=egzersizAdi(egzersiz);
+      const kayit=liste.filter(k=>egzersizAdi(k.egzersiz)===ad&&k.agirlik).sort((a,b)=>b.gun.localeCompare(a.gun))[0];
+      return kayit?kayit.agirlik:"Kayıt yok";
+    }
     function showCard(code){
       const w=workouts[code];
       document.documentElement.style.setProperty("--accent",w.color[0]);document.documentElement.style.setProperty("--soft",w.color[1]);
       document.getElementById("cardCode").textContent=code;document.getElementById("cardTitle").textContent=w.title;document.getElementById("cardMeta").textContent=w.meta;document.title=code+" · "+w.title;
-      rows.innerHTML=w.rows.map((r,i)=>`<tr><td>${i+1}</td><td class="time">${r[0]}</td><td class="exercise"><button class="exercise-button" data-exercise="${r[1]}">${r[1]}</button></td><td class="target">${r[2]}</td></tr>`).join("");
+      const tumKayitlar=gunlukKayitlariniGetir();
+      document.body.classList.toggle("salon-karti",code.startsWith("S"));
+      rows.innerHTML=w.rows.map((r,i)=>`<tr><td>${i+1}</td><td class="time">${r[0]}</td><td class="exercise"><button class="exercise-button" data-exercise="${r[1]}">${r[1]}</button></td><td class="target">${r[2]}</td><td class="last-weight weight-col">${gunlukKacis(sonAgirlik(r[1],tumKayitlar))}</td></tr>`).join("");
       const info=cardInfo[code];
-      const kayitlar=gunlukKayitlariniGetir().filter(g=>g.antrenman===code).sort((a,b)=>b.gun.localeCompare(a.gun));
+      const kayitlar=tumKayitlar.filter(g=>g.antrenman===code).sort((a,b)=>b.gun.localeCompare(a.gun));
       const gruplar=kayitlar.reduce((o,k)=>((o[k.gun]||=[]).push(k),o),{});
       journalContent.innerHTML=kayitlar.length
         ? `<div class="journal-list">${Object.keys(gruplar).sort().reverse().map(gun=>`<details class="journal-entry"><summary>${gunlukTarihEtiketi(gun)}</summary><div class="entry-body">${gunlukIcerigi(gruplar[gun])}</div></details>`).join("")}</div><a class="archive-link" href="../02-gunluk/">Tüm günlüğü gör →</a>`
