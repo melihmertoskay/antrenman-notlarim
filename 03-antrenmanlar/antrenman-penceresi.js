@@ -23,7 +23,7 @@
     function ac(kod){
       if(!kod)return;
       const ayirici=yol.includes("?")?"&":"?";
-      iframeYukle(yol+ayirici+"gomulu=1&v=20260916-weights-1#"+encodeURIComponent(kod));
+      iframeYukle(yol+ayirici+"gomulu=1&v=20260917-s2-1#"+encodeURIComponent(kod));
       modal.classList.add("open");document.body.classList.add("antrenman-modal-acik");acik=true;
       history.pushState({antrenmanPenceresi:true,kod},"",location.pathname+location.search+"#antrenman="+encodeURIComponent(kod));
       closeButton.focus();
