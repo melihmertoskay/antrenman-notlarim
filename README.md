@@ -56,7 +56,7 @@ Aynı kayıt üç görünümde kullanılır:
 
 GitHub Pages statik olduğu için arayüzden girilen değişiklikler tarayıcının `localStorage` alanında saklanır. Aynı tarayıcıda kalır; cihazlar arasında eşitlenmez. Cihazlar arası eşitleme için ileride çevrim içi veritabanı ve kullanıcı girişi eklenmelidir.
 
-Repoya kalıcı olarak eklenen günlük kayıtları `GUNLUK_BASLANGIC` dizisinde tutulur. `GUNLUK_BASLANGIC_SURUMU` değiştiğinde yeni kayıtlar, tarayıcıdaki mevcut kişisel kayıtlar silinmeden birleştirilir. Başlangıç veri paketi en son 16 Eylül 2026 tarihli S2 antrenmanıyla güncellenmiştir.
+Repoya kalıcı olarak eklenen günlük kayıtları `GUNLUK_BASLANGIC` dizisinde tutulur. `GUNLUK_BASLANGIC_SURUMU` değiştiğinde yeni kayıtlar, tarayıcıdaki mevcut kişisel kayıtlar silinmeden birleştirilir. Başlangıç veri paketi en son 17 Eylül 2026 tarihli S3 antrenmanıyla güncellenmiştir.
 
 ## Egzersiz adlandırma standardı
 
@@ -68,7 +68,7 @@ Eski günlük kayıtlarında bulunan uzun adlar silinmez. `04-egzersizler/kodlar
 
 Egzersiz görselleri başlangıç ve bitiş pozisyonlarını, hareket yönünü ve çalışan kas bölgelerini gösterir. Dosyalar `04-egzersizler/gorseller/` klasöründe tutulur; eşlemeleri `egzersizverileri.js` içindedir. Aynı egzersiz farklı antrenmanlarda yer aldığında tek görseli paylaşır.
 
-S1, S2, S3 ve S4 antrenmanlarındaki bütün egzersiz kartları görselleştirilmiştir. Aynı egzersiz birden fazla antrenmanda bulunuyorsa mevcut görsel yeniden kullanılır.
+S1, S2, S3 ve S4 antrenmanlarındaki bütün egzersiz kartları görselleştirilmiştir. Aynı egzersiz birden fazla antrenmanda bulunuyorsa mevcut görsel yeniden kullanılır. S3 kartındaki Bulgarian split squat, denge sorunu nedeniyle 17 Eylül 2026'da B14 kodlu dambıl sumo squat ile değiştirilmiştir.
 
 Tarayıcıların eski görsel eşlemelerini, günlük verilerini veya popup içindeki antrenman sayfasını önbellekte tutmaması için ilgili dosya bağlantıları sürüm parametresiyle yüklenir.
 
