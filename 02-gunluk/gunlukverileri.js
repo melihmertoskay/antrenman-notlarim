@@ -44,11 +44,16 @@ const GUNLUK_BASLANGIC=[
   {id:"2026-09-16-s2-dambil-reverse-fly",gun:"2026-09-16",antrenman:"S2",egzersiz:"Dambıl reverse fly",agirlik:"Her elde 7 kg",setTekrar:"3 × 10",aciklama:""},
   {id:"2026-09-16-s2-dambil-pullover",gun:"2026-09-16",antrenman:"S2",egzersiz:"Dambıl pullover",agirlik:"15 kg",setTekrar:"3 × 10",aciklama:""},
   {id:"2026-09-16-s2-dambil-biceps-curl",gun:"2026-09-16",antrenman:"S2",egzersiz:"Dambıl biceps curl",agirlik:"Her elde 7 kg",setTekrar:"3 × 10",aciklama:""},
-  {id:"2026-09-16-s2-dambil-hammer-curl",gun:"2026-09-16",antrenman:"S2",egzersiz:"Dambıl hammer curl",agirlik:"Her elde 7 kg",setTekrar:"3 × 10",aciklama:"Bazı ağırlıkları önceki antrenmana göre artırdım. Hareketlerin çoğu zorladı ama antrenmanı tamamladım."}
+  {id:"2026-09-16-s2-dambil-hammer-curl",gun:"2026-09-16",antrenman:"S2",egzersiz:"Dambıl hammer curl",agirlik:"Her elde 7 kg",setTekrar:"3 × 10",aciklama:"Bazı ağırlıkları önceki antrenmana göre artırdım. Hareketlerin çoğu zorladı ama antrenmanı tamamladım."},
+  {id:"2026-09-17-s3-goblet-squat",gun:"2026-09-17",antrenman:"S3",egzersiz:"Goblet squat",agirlik:"15 kg",setTekrar:"3 × 10",aciklama:""},
+  {id:"2026-09-17-s3-deadlift",gun:"2026-09-17",antrenman:"S3",egzersiz:"Deadlift",agirlik:"40 kg",setTekrar:"3 × 5",aciklama:""},
+  {id:"2026-09-17-s3-dambil-hip-thrust",gun:"2026-09-17",antrenman:"S3",egzersiz:"Dambıl hip thrust",agirlik:"15 kg",setTekrar:"3 × 10",aciklama:""},
+  {id:"2026-09-17-s3-bulgarian-split-squat",gun:"2026-09-17",antrenman:"S3",egzersiz:"Bulgarian split squat",agirlik:"5 kg",setTekrar:"Tamamlanamadı",aciklama:"Dengede duramadığım için hareket yarım kaldı. Bu nedenle Bulgarian split squat S3 kartından çıkarıldı."},
+  {id:"2026-09-17-s3-dambil-calf-raise",gun:"2026-09-17",antrenman:"S3",egzersiz:"Dambıl calf raise",agirlik:"12,5 kg",setTekrar:"3 × 15",aciklama:""}
 ];
 
 const GUNLUK_DEPOLAMA_ANAHTARI="antrenman-notlarim-gunluk-v1";
-const GUNLUK_BASLANGIC_SURUMU="2026-09-16-9";
+const GUNLUK_BASLANGIC_SURUMU="2026-09-17-10";
 const GUNLUK_SURUM_ANAHTARI=GUNLUK_DEPOLAMA_ANAHTARI+"-baslangic-surumu";
 function gunlukKopyala(deger){return JSON.parse(JSON.stringify(deger))}
 function gunlukKayitlariniGetir(){
