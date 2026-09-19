@@ -9,7 +9,7 @@ Canlı site: https://melihmertoskay.github.io/antrenman-notlarim/
 - **Ana Sayfa:** Diğer dört bölüme yönlendirir.
 - **Program:** Günlere göre hedeflenen antrenmanları gösterir. Aktif plan 9–26 Eylül 2026 arasındaki üç haftayı kapsar; ilk hafta 10 günlük aradan kontrollü dönüş olarak düzenlenmiştir.
 - **Günlük:** Antrenman günlerini tarih satırlarında listeler. Bir satır seçildiğinde egzersiz, yük, set/tekrar ve notları içeren tarih başlıklı kart popup olarak açılır; kayıt ekleme, düzenleme ve silme arayüzü korunur.
-- **Antrenmanlar:** Salon, ekipmansız ve yüzme antrenman kartlarını listeler. S1–S4 tablolarındaki `Son ağırlık` sütunu, her egzersizin bütün günlük kayıtları arasındaki en yeni yükünü otomatik gösterir.
+- **Antrenmanlar:** Salon, ekipmansız ve yüzme antrenman kartlarını listeler. S1–S4 tablolarındaki `Son ağırlık` sütunu her egzersizin en yeni kayıtlı yükünü, `Hedef ağırlık` sütunu ise dambılların 2,5 kg'lık katlarla artması nedeniyle bir sonraki denenecek yükü (deadlift'te +5 kg, diğerlerinde +2,5 kg) otomatik gösterir.
 - **Egzersizler:** Kodlu egzersiz kartlarını; yapılış, çalışan kaslar, dikkat noktaları, görsel ve geçmiş yük bilgisiyle gösterir.
 
 ## Dosya düzeni
@@ -70,7 +70,7 @@ Egzersiz görselleri başlangıç ve bitiş pozisyonlarını, hareket yönünü 
 
 S1, S2, S3 ve S4 antrenmanlarındaki bütün egzersiz kartları görselleştirilmiştir. Aynı egzersiz birden fazla antrenmanda bulunuyorsa mevcut görsel yeniden kullanılır. S3 kartındaki Bulgarian split squat, denge sorunu nedeniyle 17 Eylül 2026'da B14 kodlu dambıl sumo squat ile değiştirilmiştir.
 
-Tarayıcıların eski görsel eşlemelerini, günlük verilerini veya popup içindeki antrenman sayfasını önbellekte tutmaması için ilgili dosya bağlantıları sürüm parametresiyle yüklenir.
+Tarayıcıların eski görsel eşlemelerini, günlük verilerini veya popup içindeki antrenman sayfasını önbellekte tutmaması için veri dosyaları (`gunlukverileri.js`, `egzersizverileri.js`, `kodlar.js`, `antrenman-penceresi.js`) elle güncellenen bir sürüm numarası yerine her sayfa yüklemesinde `document.write` ile otomatik üretilen bir zaman damgasıyla (`?v=Date.now()`) çağrılır; popup içindeki antrenman sayfası da aynı şekilde `location.replace()` ile her açılışta taze yüklenir. Bu sayede içerik değiştiğinde commit içinde elle sürüm numarası güncellemek gerekmez.
 
 ## Popup davranışı
 
