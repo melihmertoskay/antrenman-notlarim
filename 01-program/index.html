@@ -81,7 +81,7 @@
   <main>
     <div id="weeks"></div>
   </main>
-  <script src="../02-gunluk/gunlukverileri.js?v=20260917-s3-1"></script>
+  <script>document.write('<script src="../02-gunluk/gunlukverileri.js?v='+Date.now()+'"><\/script>');</script>
   <script>
     const AYLAR=["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
     const GUNLER=["Pazar","Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi"];
@@ -273,7 +273,7 @@
       btn.setAttribute("aria-expanded",acik?"true":"false");
     });
   </script>
-  <script src="../03-antrenmanlar/antrenman-penceresi.js?v=20260917-s3-1"></script>
+  <script>document.write('<script src="../03-antrenmanlar/antrenman-penceresi.js?v='+Date.now()+'"><\/script>');</script>
   <script>AntrenmanPenceresi.baslat({yol:"../03-antrenmanlar/antrenman.html"});</script>
 </body>
 </html>
