@@ -49,11 +49,22 @@ const GUNLUK_BASLANGIC=[
   {id:"2026-09-17-s3-deadlift",gun:"2026-09-17",antrenman:"S3",egzersiz:"Deadlift",agirlik:"40 kg",setTekrar:"3 × 5",aciklama:""},
   {id:"2026-09-17-s3-dambil-hip-thrust",gun:"2026-09-17",antrenman:"S3",egzersiz:"Dambıl hip thrust",agirlik:"15 kg",setTekrar:"3 × 10",aciklama:""},
   {id:"2026-09-17-s3-bulgarian-split-squat",gun:"2026-09-17",antrenman:"S3",egzersiz:"Bulgarian split squat",agirlik:"5 kg",setTekrar:"Tamamlanamadı",aciklama:"Dengede duramadığım için hareket yarım kaldı. Bu nedenle Bulgarian split squat S3 kartından çıkarıldı."},
-  {id:"2026-09-17-s3-dambil-calf-raise",gun:"2026-09-17",antrenman:"S3",egzersiz:"Dambıl calf raise",agirlik:"12,5 kg",setTekrar:"3 × 15",aciklama:""}
+  {id:"2026-09-17-s3-dambil-calf-raise",gun:"2026-09-17",antrenman:"S3",egzersiz:"Dambıl calf raise",agirlik:"12,5 kg",setTekrar:"3 × 15",aciklama:""},
+  {id:"2026-09-19-y1-calf-raise",gun:"2026-09-19",antrenman:"Y1",egzersiz:"Calf raise",agirlik:"Vücut ağırlığı",setTekrar:"3 × 15",aciklama:""},
+  {id:"2026-09-19-y1-agirliksiz-squat",gun:"2026-09-19",antrenman:"Y1",egzersiz:"Ağırlıksız squat",agirlik:"Vücut ağırlığı",setTekrar:"3 × 10",aciklama:""},
+  {id:"2026-09-19-y1-rahat-yuzme",gun:"2026-09-19",antrenman:"Y1",egzersiz:"Rahat yüzme",agirlik:"—",setTekrar:"100 m",aciklama:""},
+  {id:"2026-09-19-y1-uzun-kulac",gun:"2026-09-19",antrenman:"Y1",egzersiz:"Uzun kulaç ve kontrollü nefes",agirlik:"—",setTekrar:"4 × 25 m",aciklama:""},
+  {id:"2026-09-19-y1-rahat-kesintisiz",gun:"2026-09-19",antrenman:"Y1",egzersiz:"Rahat ve kesintisiz yüzme",agirlik:"—",setTekrar:"250 m",aciklama:""},
+  {id:"2026-09-19-y1-cok-rahat",gun:"2026-09-19",antrenman:"Y1",egzersiz:"Çok rahat yüzme",agirlik:"—",setTekrar:"50 m",aciklama:""},
+  {id:"2026-09-20-s1-dambil-bench-press",gun:"2026-09-20",antrenman:"S1",egzersiz:"Dambıl bench press",agirlik:"Her elde 12,5 kg",setTekrar:"3 × 10",aciklama:""},
+  {id:"2026-09-20-s1-dambil-lateral-raise",gun:"2026-09-20",antrenman:"S1",egzersiz:"Dambıl lateral raise",agirlik:"Her elde 7 kg",setTekrar:"3 × 10",aciklama:""},
+  {id:"2026-09-20-s1-incline-dambil-press",gun:"2026-09-20",antrenman:"S1",egzersiz:"Incline dambıl press",agirlik:"Her elde 12,5 kg",setTekrar:"3 × 10",aciklama:""},
+  {id:"2026-09-20-s1-dambil-shoulder-press",gun:"2026-09-20",antrenman:"S1",egzersiz:"Dambıl shoulder press",agirlik:"Her elde 10 kg",setTekrar:"3 × 10",aciklama:""},
+  {id:"2026-09-20-s1-dambil-overhead-triceps-extension",gun:"2026-09-20",antrenman:"S1",egzersiz:"Dambıl overhead triceps extension",agirlik:"10 kg",setTekrar:"3 × 10",aciklama:""}
 ];
 
 const GUNLUK_DEPOLAMA_ANAHTARI="antrenman-notlarim-gunluk-v1";
-const GUNLUK_BASLANGIC_SURUMU="2026-09-17-10";
+const GUNLUK_BASLANGIC_SURUMU="2026-09-20-11";
 const GUNLUK_SURUM_ANAHTARI=GUNLUK_DEPOLAMA_ANAHTARI+"-baslangic-surumu";
 function gunlukKopyala(deger){return JSON.parse(JSON.stringify(deger))}
 function gunlukKayitlariniGetir(){
