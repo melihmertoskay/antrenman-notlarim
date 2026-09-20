@@ -125,8 +125,17 @@
       const kayit=liste.filter(k=>egzersizAdi(k.egzersiz)===ad&&k.agirlik).sort((a,b)=>b.gun.localeCompare(a.gun))[0];
       return kayit?kayit.agirlik:"Kayıt yok";
     }
-    // Dambıllar 2,5 kg'lık katlarla geldiği için hedef her zaman son ağırlığın bir kademe üstü;
-    // deadlift haftada bir kez çalıştığı için 5 kg, diğer hareketler 2,5 kg artıyor (bkz. Program sayfası ilerleme notu).
+    // Açıkça belirlenmiş hedefler otomatik artıştan önce gelir.
+    const HEDEF_AGIRLIK_OVERRIDE={
+      S1:{
+        "Dambıl bench press":"Her elde 12,5 kg",
+        "Dambıl lateral raise":"Her elde 7 kg",
+        "Incline dambıl press":"Her elde 10 kg",
+        "Dambıl shoulder press":"Her elde 7 kg",
+        "Dambıl overhead triceps extension":"10 kg"
+      }
+    };
+    // Varsayılan hedef deadlift'te 5 kg, diğer ağırlıklı hareketlerde 2,5 kg artıştır.
     function hedefAgirlik(sonDeger,egzersiz){
       if(sonDeger==="—"||sonDeger==="Kayıt yok")return "—";
       const eslesme=sonDeger.match(/^(.*?)([\d]+(?:,[\d]+)?)\s*kg$/i);
@@ -143,7 +152,7 @@
       document.getElementById("cardCode").textContent=code;document.getElementById("cardTitle").textContent=w.title;document.getElementById("cardMeta").textContent=w.meta;document.title=code+" · "+w.title;
       const tumKayitlar=gunlukKayitlariniGetir();
       document.body.classList.toggle("salon-karti",code.startsWith("S"));
-      rows.innerHTML=w.rows.map((r,i)=>{const son=sonAgirlik(r[1],tumKayitlar);return `<tr><td>${i+1}</td><td class="time">${r[0]}</td><td class="exercise"><button class="exercise-button" data-exercise="${r[1]}">${r[1]}</button></td><td class="target">${r[2]}</td><td class="last-weight weight-col">${gunlukKacis(son)}</td><td class="last-weight weight-col">${gunlukKacis(hedefAgirlik(son,r[1]))}</td></tr>`}).join("");
+      rows.innerHTML=w.rows.map((r,i)=>{const son=sonAgirlik(r[1],tumKayitlar);const hedef=(HEDEF_AGIRLIK_OVERRIDE[code]||{})[egzersizAdi(r[1])]||hedefAgirlik(son,r[1]);return `<tr><td>${i+1}</td><td class="time">${r[0]}</td><td class="exercise"><button class="exercise-button" data-exercise="${r[1]}">${r[1]}</button></td><td class="target">${r[2]}</td><td class="last-weight weight-col">${gunlukKacis(son)}</td><td class="last-weight weight-col">${gunlukKacis(hedef)}</td></tr>`}).join("");
       const info=cardInfo[code];
       const kayitlar=tumKayitlar.filter(g=>g.antrenman===code).sort((a,b)=>b.gun.localeCompare(a.gun));
       const gruplar=kayitlar.reduce((o,k)=>((o[k.gun]||=[]).push(k),o),{});
