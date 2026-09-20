@@ -9,7 +9,7 @@ Canlı site: https://melihmertoskay.github.io/antrenman-notlarim/
 - **Ana Sayfa:** Diğer dört bölüme yönlendirir.
 - **Program:** Günlere göre hedeflenen antrenmanları gösterir. Aktif plan 9–26 Eylül 2026 arasındaki üç haftayı kapsar; ilk hafta 10 günlük aradan kontrollü dönüş olarak düzenlenmiştir.
 - **Günlük:** Antrenman günlerini tarih satırlarında listeler. Bir satır seçildiğinde egzersiz, yük, set/tekrar ve notları içeren tarih başlıklı kart popup olarak açılır; kayıt ekleme, düzenleme ve silme arayüzü korunur.
-- **Antrenmanlar:** Salon, ekipmansız ve yüzme antrenman kartlarını listeler. S1–S4 tablolarındaki `Son ağırlık` sütunu her egzersizin en yeni kayıtlı yükünü, `Hedef ağırlık` sütunu ise dambılların 2,5 kg'lık katlarla artması nedeniyle bir sonraki denenecek yükü (deadlift'te +5 kg, diğerlerinde +2,5 kg) otomatik gösterir.
+- **Antrenmanlar:** Salon, ekipmansız ve yüzme antrenman kartlarını listeler. S1–S4 tablolarındaki `Son ağırlık` sütunu her egzersizin en yeni kayıtlı yükünü gösterir. `Hedef ağırlık` sütununda kullanıcı tarafından açıkça belirlenen hedef varsa bu değer korunur; aksi durumda deadlift için +5 kg, diğer ağırlıklı hareketler için +2,5 kg önerilir.
 - **Egzersizler:** Kodlu egzersiz kartlarını; yapılış, çalışan kaslar, dikkat noktaları, görsel ve geçmiş yük bilgisiyle gösterir.
 
 ## Dosya düzeni
@@ -56,7 +56,7 @@ Aynı kayıt üç görünümde kullanılır:
 
 GitHub Pages statik olduğu için arayüzden girilen değişiklikler tarayıcının `localStorage` alanında saklanır. Aynı tarayıcıda kalır; cihazlar arasında eşitlenmez. Cihazlar arası eşitleme için ileride çevrim içi veritabanı ve kullanıcı girişi eklenmelidir.
 
-Repoya kalıcı olarak eklenen günlük kayıtları `GUNLUK_BASLANGIC` dizisinde tutulur. `GUNLUK_BASLANGIC_SURUMU` değiştiğinde yeni kayıtlar, tarayıcıdaki mevcut kişisel kayıtlar silinmeden birleştirilir. Başlangıç veri paketi en son 19 Eylül 2026 tarihli Y1 ve 20 Eylül 2026 tarihli S1 antrenmanlarıyla güncellenmiştir.
+Repoya kalıcı olarak eklenen günlük kayıtları `GUNLUK_BASLANGIC` dizisinde tutulur. `GUNLUK_BASLANGIC_SURUMU` değiştiğinde yeni kayıtlar, tarayıcıdaki mevcut kişisel kayıtlar silinmeden birleştirilir. Düzeltilmesi gereken mevcut kayıt kimlikleri `GUNLUK_ZORUNLU_GUNCELLEME_IDLERI` ile bir defaya mahsus yenilenebilir. Başlangıç veri paketi en son 19 Eylül 2026 tarihli Y1 ve düzeltilmiş 20 Eylül 2026 tarihli S1 antrenmanlarıyla güncellenmiştir.
 
 ## Egzersiz adlandırma standardı
 
