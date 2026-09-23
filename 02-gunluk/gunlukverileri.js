@@ -60,11 +60,16 @@ const GUNLUK_BASLANGIC=[
   {id:"2026-09-20-s1-dambil-lateral-raise",gun:"2026-09-20",antrenman:"S1",egzersiz:"Dambıl lateral raise",agirlik:"Her elde 7 kg",setTekrar:"3 × 10",aciklama:"Zorladı; bir sonraki S1 için hedef aynı ağırlık."},
   {id:"2026-09-20-s1-incline-dambil-press",gun:"2026-09-20",antrenman:"S1",egzersiz:"Incline dambıl press",agirlik:"Her elde 10 kg",setTekrar:"1 × 10; önce 12,5 kg ile 1 tam set ve 1 yarım set",aciklama:"12,5 kg ile ilk seti tamamladım, ikinci set yarıda kaldı. Üçüncü seti 10 kg ile tamamladım. Bir sonraki hedef 10 kg."},
   {id:"2026-09-20-s1-dambil-shoulder-press",gun:"2026-09-20",antrenman:"S1",egzersiz:"Dambıl shoulder press",agirlik:"Her elde 7 kg",setTekrar:"3 × 10",aciklama:"Bir sonraki S1 için hedef aynı ağırlık."},
-  {id:"2026-09-20-s1-dambil-overhead-triceps-extension",gun:"2026-09-20",antrenman:"S1",egzersiz:"Dambıl overhead triceps extension",agirlik:"10 kg",setTekrar:"3 × 10",aciklama:"Bir sonraki S1 için hedef aynı ağırlık."}
+  {id:"2026-09-20-s1-dambil-overhead-triceps-extension",gun:"2026-09-20",antrenman:"S1",egzersiz:"Dambıl overhead triceps extension",agirlik:"10 kg",setTekrar:"3 × 10",aciklama:"Bir sonraki S1 için hedef aynı ağırlık."},
+  {id:"2026-09-23-s1-dambil-bench-press",gun:"2026-09-23",antrenman:"S1",egzersiz:"Dambıl bench press",agirlik:"Her elde 12,5 kg",setTekrar:"3 × 10",aciklama:"Rahat tamamladım. 15 kg'a geçmeden önce bu ağırlığı bir S1 antrenmanında daha rahat tamamlamak istiyorum."},
+  {id:"2026-09-23-s1-dambil-lateral-raise",gun:"2026-09-23",antrenman:"S1",egzersiz:"Dambıl lateral raise",agirlik:"Her elde 7 kg",setTekrar:"3 × 10",aciklama:"Çok zor tamamladım; hedef aynı ağırlıkta kalacak."},
+  {id:"2026-09-23-s1-incline-dambil-press",gun:"2026-09-23",antrenman:"S1",egzersiz:"Incline dambıl press",agirlik:"Her elde 10 kg",setTekrar:"3 × 10",aciklama:"Rahat tamamladım. 12,5 kg'a geçmeden önce bu ağırlığı bir S1 antrenmanında daha rahat tamamlamak istiyorum."},
+  {id:"2026-09-23-s1-dambil-shoulder-press",gun:"2026-09-23",antrenman:"S1",egzersiz:"Dambıl shoulder press",agirlik:"Her elde 7 kg",setTekrar:"3 × 10",aciklama:"Zorladı; şu an ağırlık artışı düşünülmüyor."},
+  {id:"2026-09-23-s1-dambil-overhead-triceps-extension",gun:"2026-09-23",antrenman:"S1",egzersiz:"Dambıl overhead triceps extension",agirlik:"10 kg",setTekrar:"3 × 10",aciklama:"Zorlandım ama tamamladım. Birkaç S1 antrenmanı daha bu ağırlıkta çalıştıktan sonra artış değerlendirilecek."}
 ];
 
 const GUNLUK_DEPOLAMA_ANAHTARI="antrenman-notlarim-gunluk-v1";
-const GUNLUK_BASLANGIC_SURUMU="2026-09-20-12";
+const GUNLUK_BASLANGIC_SURUMU="2026-09-23-13";
 const GUNLUK_ZORUNLU_GUNCELLEME_IDLERI=new Set([
   "2026-09-20-s1-dambil-bench-press",
   "2026-09-20-s1-dambil-lateral-raise",
