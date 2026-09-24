@@ -81,7 +81,7 @@
       S2:{title:ANTRENMAN_ADI.S2,meta:"40 dakika · Set araları 60 saniye",color:["#285e49","#e5eee9"],rows:[
         ["0–5 dk","Omuz ve sırt ısınması","5 dk"],["5–14 dk","Tek kol dambıl row","3 × 10"],["14–21 dk","Dambıl reverse fly","3 × 10"],["21–28 dk","Dambıl pullover","3 × 10"],["28–34 dk","Dambıl biceps curl","3 × 10"],["34–40 dk","Dambıl hammer curl","3 × 10"]]},
       S3:{title:ANTRENMAN_ADI.S3,meta:"40 dakika · Set araları 60 saniye",color:["#285e49","#e5eee9"],rows:[
-        ["0–5 dk","Squat ve bacak ısınması","5 dk"],["5–13 dk","Goblet squat","3 × 10"],["13–21 dk","Deadlift","3 × 5"],["21–29 dk","Dambıl hip thrust","3 × 10"],["29–36 dk","Dambıl sumo squat","3 × 10"],["36–40 dk","Dambıl calf raise","3 × 15"]]},
+        ["0–5 dk","Squat ve bacak ısınması","5 dk"],["5–13 dk","Goblet squat","3 × 10"],["13–21 dk","Deadlift","3 × 5"],["21–29 dk","Kablo pull-through","3 × 10"],["29–36 dk","Dambıl sumo squat","3 × 10"],["36–40 dk","Dambıl calf raise","3 × 15"]]},
       S4:{title:ANTRENMAN_ADI.S4,meta:"40 dakika · Set araları 60 saniye",color:["#285e49","#e5eee9"],rows:[
         ["0–5 dk","Genel ısınma","5 dk"],["5–12 dk","Goblet squat","3 × 10"],["12–19 dk","Dambıl bench press","3 × 10"],["19–27 dk","Tek kol dambıl row","3 × 10"],["27–34 dk","Dambıl Romanian deadlift","3 × 10"],["34–40 dk","Dambıl shoulder press","3 × 10"]]},
       E1:{title:ANTRENMAN_ADI.E1,meta:"40 dakika · Set araları 60 saniye",color:["#985a27","#f4e8dc"],rows:[
@@ -105,7 +105,7 @@
         when:"Göğüs ve omuzların dinlenmişse; son bir-iki günde ağır bir itiş antrenmanı veya yorucu yüzme yapmadıysan seçilebilir."
       },
       S2:{aim:"Sırt, arka omuz ve ön kol kaslarını geliştirir. İtiş ağırlıklı çalışmaları dengelemeye yardımcı olur.",when:"Sırt ve kolların dinlenmişse veya son antrenmanların daha çok göğüs ve bacak odaklıysa seçilebilir."},
-      S3:{aim:"Bacak, kalça, arka bacak ve baldır kaslarını birlikte çalıştırır; deadlift dışında tamamen dambılla yapılır.",when:"Bacakların dinlenmişse ve son antrenmanın üst vücut ya da yüzme ağırlıklıysa seçilebilir. Deadlift için bir barbell gerekir — dambılla aynı ağırlıkta ve güvenlikte yapılamayacak tek harekettir."},
+      S3:{aim:"Bacak, kalça, arka bacak ve baldır kaslarını birlikte çalıştırır; goblet ve sumo squat ağırlık plakasıyla da yapılabilir.",when:"Bacakların dinlenmişse seçilebilir. Deadlift için barbell, pull-through için alt makaralı kablo ve halat gerekir."},
       S4:{aim:"Tek antrenmanda göğüs, sırt, omuz, bacak ve kalçayı çalıştıran dengeli bir tam vücut kartıdır.",when:"Bir süredir antrenman yapmadıysan, o hafta az gün ayırabileceksen veya belirli bir kas grubu özellikle yorgun değilse seçilebilir."},
       E1:{aim:"Ekipman olmadan göğüs, omuz, arka kol ve core bölgesini çalıştırır.",when:"Evde üst vücut çalışmak istediğinde kullanılabilir. İtiş ağırlıklı bir karttır; çekiş tarafı için E4 veya S2 ile dengelenmelidir."},
       E2:{aim:"Ekipman olmadan bacak, kalça ve baldır kaslarını çalıştırır.",when:"Evde bacak çalışmak istediğinde ve bacakların önceki antrenmandan dinlenmiş olduğunda seçilebilir."},
@@ -127,6 +127,12 @@
     }
     // Açıkça belirlenmiş hedefler otomatik artıştan önce gelir.
     const HEDEF_AGIRLIK_OVERRIDE={
+      S3:{
+        "Goblet squat":"20 kg",
+        "Deadlift":"50 kg",
+        "Dambıl sumo squat":"20 kg",
+        "Dambıl calf raise":"20 kg"
+      },
       S1:{
         "Dambıl bench press":"Her elde 12,5 kg",
         "Dambıl lateral raise":"Her elde 7 kg",
