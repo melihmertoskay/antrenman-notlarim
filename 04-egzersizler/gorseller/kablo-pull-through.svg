@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 550" role="img" aria-labelledby="title desc">
+<title id="title">Kablo pull-through: kalça geriye ve öne</title>
+<desc id="desc">Halat alt makaradan bacaklar arasına gelir. İlk konumda kalça geride ve dizler hafif bükülü, bitişte kalça önde ve gövde dik. Turuncu alan kalça kaslarını gösterir.</desc>
+<rect width="1000" height="550" rx="24" fill="#f6f4ee"/>
+<rect x="25" y="25" width="460" height="475" rx="18" fill="#fffefa" stroke="#dedbd3"/>
+<rect x="515" y="25" width="460" height="475" rx="18" fill="#fffefa" stroke="#dedbd3"/>
+<text x="48" y="69" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#254f3e">1 · Kalçayı geriye gönder</text>
+<text x="538" y="69" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#254f3e">2 · Kalçayı öne getir</text>
+<g fill="none" stroke="#8a918a" stroke-width="6" stroke-linejoin="round">
+<path d="M80 130V435H133"/><circle cx="84" cy="398" r="13" fill="#8a918a"/>
+<path d="M568 130V435H619"/><circle cx="570" cy="398" r="13" fill="#8a918a"/>
+</g>
+<g fill="none" stroke="#507467" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M88 397 Q150 375 241 347"/>
+<path d="M574 397 Q634 374 716 344"/>
+</g>
+<g fill="none" stroke="#333e39" stroke-width="19" stroke-linecap="round" stroke-linejoin="round">
+<path d="M253 300 L338 244 L368 217"/>
+<path d="M250 307 L297 357 L295 429"/>
+<path d="M249 310 L223 364 L229 429"/>
+<path d="M320 259 L271 294 L248 344"/>
+<path d="M340 245 L298 305 L268 343"/>
+<path d="M710 286 L729 188 L729 150"/>
+<path d="M711 292 L742 355 L743 430"/>
+<path d="M710 292 L680 355 L674 430"/>
+<path d="M726 201 L704 270 L714 339"/>
+<path d="M739 201 L755 270 L744 339"/>
+</g>
+<g fill="#fffefa" stroke="#333e39" stroke-width="9">
+<circle cx="381" cy="201" r="26"/><circle cx="735" cy="122" r="26"/>
+</g>
+<g fill="#d76c4b" stroke="#b75135" stroke-width="3">
+<ellipse cx="255" cy="309" rx="27" ry="30" transform="rotate(18 255 309)"/>
+<ellipse cx="708" cy="289" rx="26" ry="31" transform="rotate(-8 708 289)"/>
+</g>
+<g fill="#333e39"><circle cx="250" cy="344" r="9"/><circle cx="267" cy="343" r="9"/><circle cx="716" cy="340" r="9"/><circle cx="743" cy="340" r="9"/></g>
+<g fill="none" stroke="#333e39" stroke-width="8" stroke-linecap="round">
+<path d="M221 430H256M284 430H317M657 430H692M731 430H765"/>
+</g>
+<g fill="none" stroke="#cf7850" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M456 268v-79m0 0-12 16m12-16 12 16"/>
+</g>
+<text x="57" y="473" font-family="Arial,sans-serif" font-size="19" fill="#424a45">Hafif bükülü diz · düz sırt</text>
+<text x="550" y="473" font-family="Arial,sans-serif" font-size="19" fill="#424a45">Kalçayı sık · beli geriye atma</text>
+<circle cx="60" cy="524" r="11" fill="#d76c4b"/>
+<text x="80" y="531" font-family="Arial,sans-serif" font-size="18" fill="#424a45">Çalışan ana bölge: kalça kasları</text>
+</svg>
