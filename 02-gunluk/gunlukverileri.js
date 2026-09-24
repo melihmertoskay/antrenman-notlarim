@@ -65,11 +65,16 @@ const GUNLUK_BASLANGIC=[
   {id:"2026-09-23-s1-dambil-lateral-raise",gun:"2026-09-23",antrenman:"S1",egzersiz:"Dambıl lateral raise",agirlik:"Her elde 7 kg",setTekrar:"3 × 10",aciklama:"Çok zor tamamladım; hedef aynı ağırlıkta kalacak."},
   {id:"2026-09-23-s1-incline-dambil-press",gun:"2026-09-23",antrenman:"S1",egzersiz:"Incline dambıl press",agirlik:"Her elde 10 kg",setTekrar:"3 × 10",aciklama:"Rahat tamamladım. 12,5 kg'a geçmeden önce bu ağırlığı bir S1 antrenmanında daha rahat tamamlamak istiyorum."},
   {id:"2026-09-23-s1-dambil-shoulder-press",gun:"2026-09-23",antrenman:"S1",egzersiz:"Dambıl shoulder press",agirlik:"Her elde 7 kg",setTekrar:"3 × 10",aciklama:"Zorladı; şu an ağırlık artışı düşünülmüyor."},
-  {id:"2026-09-23-s1-dambil-overhead-triceps-extension",gun:"2026-09-23",antrenman:"S1",egzersiz:"Dambıl overhead triceps extension",agirlik:"10 kg",setTekrar:"3 × 10",aciklama:"Zorlandım ama tamamladım. Birkaç S1 antrenmanı daha bu ağırlıkta çalıştıktan sonra artış değerlendirilecek."}
+  {id:"2026-09-23-s1-dambil-overhead-triceps-extension",gun:"2026-09-23",antrenman:"S1",egzersiz:"Dambıl overhead triceps extension",agirlik:"10 kg",setTekrar:"3 × 10",aciklama:"Zorlandım ama tamamladım. Birkaç S1 antrenmanı daha bu ağırlıkta çalıştıktan sonra artış değerlendirilecek."},
+  {id:"2026-09-24-s3-goblet-squat",gun:"2026-09-24",antrenman:"S3",egzersiz:"Goblet squat",agirlik:"20 kg",setTekrar:"3 × 10",aciklama:""},
+  {id:"2026-09-24-s3-deadlift",gun:"2026-09-24",antrenman:"S3",egzersiz:"Deadlift",agirlik:"50 kg",setTekrar:"3 × 5",aciklama:""},
+  {id:"2026-09-24-s3-dambil-hip-thrust",gun:"2026-09-24",antrenman:"S3",egzersiz:"Dambıl hip thrust",agirlik:"15 kg",setTekrar:"3 × 10",aciklama:"Salonda en ağır dambıl 15 kg; ağırlık plakasını kalçama düzgün yerleştiremedim. Gelecek S3 antrenmanlarında yerine kablo pull-through çalışacağım."},
+  {id:"2026-09-24-s3-dambil-sumo-squat",gun:"2026-09-24",antrenman:"S3",egzersiz:"Dambıl sumo squat",agirlik:"20 kg",setTekrar:"3 × 10",aciklama:""},
+  {id:"2026-09-24-s3-dambil-calf-raise",gun:"2026-09-24",antrenman:"S3",egzersiz:"Dambıl calf raise",agirlik:"20 kg",setTekrar:"3 × 15",aciklama:"Tek eldeki ağırlık belirtilmedi."}
 ];
 
 const GUNLUK_DEPOLAMA_ANAHTARI="antrenman-notlarim-gunluk-v1";
-const GUNLUK_BASLANGIC_SURUMU="2026-09-23-13";
+const GUNLUK_BASLANGIC_SURUMU="2026-09-24-14";
 const GUNLUK_ZORUNLU_GUNCELLEME_IDLERI=new Set([
   "2026-09-20-s1-dambil-bench-press",
   "2026-09-20-s1-dambil-lateral-raise",
