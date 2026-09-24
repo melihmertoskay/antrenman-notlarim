@@ -56,7 +56,7 @@ Aynı kayıt üç görünümde kullanılır:
 
 GitHub Pages statik olduğu için arayüzden girilen değişiklikler tarayıcının `localStorage` alanında saklanır. Aynı tarayıcıda kalır; cihazlar arasında eşitlenmez. Cihazlar arası eşitleme için ileride çevrim içi veritabanı ve kullanıcı girişi eklenmelidir.
 
-Repoya kalıcı olarak eklenen günlük kayıtları `GUNLUK_BASLANGIC` dizisinde tutulur. `GUNLUK_BASLANGIC_SURUMU` değiştiğinde yeni kayıtlar, tarayıcıdaki mevcut kişisel kayıtlar silinmeden birleştirilir. Düzeltilmesi gereken mevcut kayıt kimlikleri `GUNLUK_ZORUNLU_GUNCELLEME_IDLERI` ile bir defaya mahsus yenilenebilir. Başlangıç veri paketi en son 23 Eylül 2026 tarihli S1 antrenmanıyla güncellenmiştir.
+Repoya kalıcı olarak eklenen günlük kayıtları `GUNLUK_BASLANGIC` dizisinde tutulur. `GUNLUK_BASLANGIC_SURUMU` değiştiğinde yeni kayıtlar, tarayıcıdaki mevcut kişisel kayıtlar silinmeden birleştirilir. Düzeltilmesi gereken mevcut kayıt kimlikleri `GUNLUK_ZORUNLU_GUNCELLEME_IDLERI` ile bir defaya mahsus yenilenebilir. Başlangıç veri paketi en son 24 Eylül 2026 tarihli S3 antrenmanıyla güncellenmiştir. O gün bildirilen 20 kg calf raise yükü tek el için belirtilmediğinden aynen 20 kg olarak saklanır.
 
 ## Egzersiz adlandırma standardı
 
@@ -68,7 +68,7 @@ Eski günlük kayıtlarında bulunan uzun adlar silinmez. `04-egzersizler/kodlar
 
 Egzersiz görselleri başlangıç ve bitiş pozisyonlarını, hareket yönünü ve çalışan kas bölgelerini gösterir. Dosyalar `04-egzersizler/gorseller/` klasöründe tutulur; eşlemeleri `egzersizverileri.js` içindedir. Aynı egzersiz farklı antrenmanlarda yer aldığında tek görseli paylaşır.
 
-S1, S2, S3 ve S4 antrenmanlarındaki bütün egzersiz kartları görselleştirilmiştir. Aynı egzersiz birden fazla antrenmanda bulunuyorsa mevcut görsel yeniden kullanılır. S3 kartındaki Bulgarian split squat, denge sorunu nedeniyle 17 Eylül 2026'da B14 kodlu dambıl sumo squat ile değiştirilmiştir.
+S1, S2, S3 ve S4 antrenmanlarındaki bütün egzersiz kartları görselleştirilmiştir. Aynı egzersiz birden fazla antrenmanda bulunuyorsa mevcut görsel yeniden kullanılır. S3 kartındaki Bulgarian split squat, denge sorunu nedeniyle 17 Eylül 2026'da B14 kodlu dambıl sumo squat ile değiştirilmiştir. 24 Eylül 2026'da salondaki dambıllar 15 kg ile sınırlı olduğu ve plaka kalçada rahat durmadığı için hip thrust geçmiş kayıtlarda bırakılıp S3'te B15 kodlu kablo pull-through ile değiştirildi. Bunun için alt makaralı kablo ve halat gerekir; ilk yük hafif seçilip günlüğe yazılır. Goblet ve sumo squat 20 kg plaka ile yapılabilir; eski egzersiz adları günlükteki geçmişle eşleşmeleri için korunur. Yeni hareketin açıklaması ve SVG çizimi egzersiz kartında gösterilir.
 
 Tarayıcıların eski görsel eşlemelerini, günlük verilerini veya popup içindeki antrenman sayfasını önbellekte tutmaması için veri dosyaları (`gunlukverileri.js`, `egzersizverileri.js`, `kodlar.js`, `antrenman-penceresi.js`) elle güncellenen bir sürüm numarası yerine her sayfa yüklemesinde `document.write` ile otomatik üretilen bir zaman damgasıyla (`?v=Date.now()`) çağrılır; popup içindeki antrenman sayfası da aynı şekilde `location.replace()` ile her açılışta taze yüklenir. Bu sayede içerik değiştiğinde commit içinde elle sürüm numarası güncellemek gerekmez.
 
