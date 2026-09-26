@@ -70,11 +70,16 @@ const GUNLUK_BASLANGIC=[
   {id:"2026-09-24-s3-deadlift",gun:"2026-09-24",antrenman:"S3",egzersiz:"Deadlift",agirlik:"50 kg",setTekrar:"3 × 5",aciklama:""},
   {id:"2026-09-24-s3-dambil-hip-thrust",gun:"2026-09-24",antrenman:"S3",egzersiz:"Dambıl hip thrust",agirlik:"15 kg",setTekrar:"3 × 10",aciklama:"Salonda en ağır dambıl 15 kg; ağırlık plakasını kalçama düzgün yerleştiremedim. Gelecek S3 antrenmanlarında yerine kablo pull-through çalışacağım."},
   {id:"2026-09-24-s3-dambil-sumo-squat",gun:"2026-09-24",antrenman:"S3",egzersiz:"Dambıl sumo squat",agirlik:"20 kg",setTekrar:"3 × 10",aciklama:""},
-  {id:"2026-09-24-s3-dambil-calf-raise",gun:"2026-09-24",antrenman:"S3",egzersiz:"Dambıl calf raise",agirlik:"20 kg",setTekrar:"3 × 15",aciklama:"Tek eldeki ağırlık belirtilmedi."}
+  {id:"2026-09-24-s3-dambil-calf-raise",gun:"2026-09-24",antrenman:"S3",egzersiz:"Dambıl calf raise",agirlik:"20 kg",setTekrar:"3 × 15",aciklama:"Tek eldeki ağırlık belirtilmedi."},
+  {id:"2026-09-25-s2-tek-kol-dambil-row",gun:"2026-09-25",antrenman:"S2",egzersiz:"Tek kol dambıl row",agirlik:"15 kg",setTekrar:"3 × 10",aciklama:"Hafif geçti. Bir sonraki hedef 20 kg ağırlık plakasını deneyerek çalışmak; salonda 17,5 kg dambıl yok."},
+  {id:"2026-09-25-s2-dambil-reverse-fly",gun:"2026-09-25",antrenman:"S2",egzersiz:"Dambıl reverse fly",agirlik:"Her elde 7 kg",setTekrar:"3 × 10",aciklama:"Zor tamamladım; ağırlık artışına hazır değilim."},
+  {id:"2026-09-25-s2-dambil-pullover",gun:"2026-09-25",antrenman:"S2",egzersiz:"Dambıl pullover",agirlik:"15 kg",setTekrar:"3 × 10",aciklama:"Zor tamamladım; ağırlık artırmayacağım."},
+  {id:"2026-09-25-s2-dambil-biceps-curl",gun:"2026-09-25",antrenman:"S2",egzersiz:"Dambıl biceps curl",agirlik:"Her elde 7 kg",setTekrar:"3 × 10",aciklama:"Tamamladım ama ağırlığı artıramam."},
+  {id:"2026-09-25-s2-dambil-hammer-curl",gun:"2026-09-25",antrenman:"S2",egzersiz:"Dambıl hammer curl",agirlik:"Her elde 7 kg",setTekrar:"3 set; son 2 tekrar yapılamadı",aciklama:"Çok zorlandım. Bir sonraki S2'de hammer curl'ü biceps curl'den önce yaparsam daha rahat tamamlayabileceğimi düşünüyorum."}
 ];
 
 const GUNLUK_DEPOLAMA_ANAHTARI="antrenman-notlarim-gunluk-v1";
-const GUNLUK_BASLANGIC_SURUMU="2026-09-24-14";
+const GUNLUK_BASLANGIC_SURUMU="2026-09-25-15";
 const GUNLUK_ZORUNLU_GUNCELLEME_IDLERI=new Set([
   "2026-09-20-s1-dambil-bench-press",
   "2026-09-20-s1-dambil-lateral-raise",
