@@ -56,7 +56,9 @@ Aynı kayıt üç görünümde kullanılır:
 
 GitHub Pages statik olduğu için arayüzden girilen değişiklikler tarayıcının `localStorage` alanında saklanır. Aynı tarayıcıda kalır; cihazlar arasında eşitlenmez. Cihazlar arası eşitleme için ileride çevrim içi veritabanı ve kullanıcı girişi eklenmelidir.
 
-Repoya kalıcı olarak eklenen günlük kayıtları `GUNLUK_BASLANGIC` dizisinde tutulur. `GUNLUK_BASLANGIC_SURUMU` değiştiğinde yeni kayıtlar, tarayıcıdaki mevcut kişisel kayıtlar silinmeden birleştirilir. Düzeltilmesi gereken mevcut kayıt kimlikleri `GUNLUK_ZORUNLU_GUNCELLEME_IDLERI` ile bir defaya mahsus yenilenebilir. Başlangıç veri paketi en son 24 Eylül 2026 tarihli S3 antrenmanıyla güncellenmiştir. O gün bildirilen 20 kg calf raise yükü tek el için belirtilmediğinden aynen 20 kg olarak saklanır.
+Repoya kalıcı olarak eklenen günlük kayıtları `GUNLUK_BASLANGIC` dizisinde tutulur. `GUNLUK_BASLANGIC_SURUMU` değiştiğinde yeni kayıtlar, tarayıcıdaki mevcut kişisel kayıtlar silinmeden birleştirilir. Düzeltilmesi gereken mevcut kayıt kimlikleri `GUNLUK_ZORUNLU_GUNCELLEME_IDLERI` ile bir defaya mahsus yenilenebilir. Başlangıç veri paketi en son 25 Eylül 2026 tarihli S2 antrenmanıyla güncellenmiştir. O gün bildirilen 20 kg calf raise yükü tek el için belirtilmediğinden aynen 20 kg olarak saklanır.
+
+25 Eylül S2 kaydında tek kol row 15 kg ile hafif geçtiği için bir sonraki hedef 20 kg plaka olarak işaretlendi; form bozulursa 15 kg'da kalınır. Reverse fly ve biceps varyasyonlarında her elde 7 kg, pullover'da 15 kg korunur. Hammer curl'ün son iki tekrarı tamamlanamadı; bir sonraki S2'de hammer curl, biceps curl'den önce gelir. Eski günlük kayıtları değiştirilmez.
 
 ## Egzersiz adlandırma standardı
 
