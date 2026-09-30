@@ -8,8 +8,8 @@ Canlı site: https://melihmertoskay.github.io/antrenman-notlarim/
 
 - **Ana Sayfa:** Diğer dört bölüme yönlendirir.
 - **Program:** Günlere göre hedeflenen antrenmanları gösterir. Aktif plan 9–26 Eylül 2026 arasındaki üç haftayı kapsar; ilk hafta 10 günlük aradan kontrollü dönüş olarak düzenlenmiştir.
-- **Günlük:** Antrenman günlerini tarih satırlarında listeler. Bir satır seçildiğinde egzersiz, yük, set/tekrar ve notları içeren tarih başlıklı kart popup olarak açılır; kayıt ekleme, düzenleme ve silme arayüzü korunur.
-- **Antrenmanlar:** Salon, ekipmansız ve yüzme antrenman kartlarını listeler. S1–S4 tablolarındaki `Son ağırlık` sütunu her egzersizin en yeni kayıtlı yükünü gösterir. `Hedef ağırlık` sütununda kullanıcı tarafından açıkça belirlenen hedef varsa bu değer korunur; aksi durumda deadlift için +5 kg, diğer ağırlıklı hareketler için +2,5 kg önerilir.
+- **Günlük:** Antrenman günlerini tarih satırlarında listeler. Bir satır seçildiğinde egzersiz, yük, set/tekrar ve notları içeren tarih başlıklı kart popup olarak açılır; kayıt ekleme, düzenleme ve silme arayüzü korunur; yeni kayıtta zorluk seviyesi de seçilebilir.
+- **Antrenmanlar:** Salon, ekipmansız ve yüzme antrenman kartlarını listeler. S1–S4 tablolarındaki `Son ağırlık` sütunu her egzersizin en yeni kayıtlı yükünü gösterir. Tüm antrenman kartlarındaki `Zorluk` sütunu son seviyeyi (`Kolay`, `Orta`, `Zor`) ve aynı egzersizin art arda bu seviyede çalışıldığı gün sayısını gösterir (`2 × Orta` gibi). Önceki notlardan çıkarılan seviyeler `Tahmini` olarak işaretlenir; kayıt olmayan hareketlerde `Kayıt yok` görünür.
 - **Egzersizler:** Kodlu egzersiz kartlarını; yapılış, çalışan kaslar, dikkat noktaları, görsel ve geçmiş yük bilgisiyle gösterir.
 
 ## Dosya düzeni
@@ -32,7 +32,7 @@ index.html                              Ana sayfa
 
 - **Antrenman kartı:** Birkaç egzersizin birleşmesiyle oluşan yaklaşık 40 dakikalık çalışma.
 - **Egzersiz kartı:** Tek bir hareketin açıklamasını, görselini ve geçmiş kayıtlarını gösteren popup.
-- **Günlük kaydı:** Tarih, antrenman, egzersiz, kullanılan yük, set/tekrar ve isteğe bağlı nottan oluşan veri.
+- **Günlük kaydı:** Tarih, antrenman, egzersiz, kullanılan yük, set/tekrar, isteğe bağlı zorluk seviyesi ve nottan oluşan veri.
 
 ## Günlük veri modeli
 
@@ -44,9 +44,12 @@ index.html                              Ana sayfa
   egzersiz: "Egzersiz adı",
   agirlik: "Kullanılan yük",
   setTekrar: "Set × tekrar",
+  zorluk: "Kolay | Orta | Zor | boş",
   aciklama: "İsteğe bağlı not"
 }
 ```
+
+Eski kayıtlarda `zorluk` alanı çoğunlukla yoktur. Arayüz açık zorluk notlarını önce kullanır; nottan çıkarılabilen `rahat/hafif` ifadelerini Kolay, `zor/yarım/ağrı` ifadelerini Zor, `ortalama` ifadelerini Orta kabul eder. Açıklamasız tamamlanmış kayıtlar şimdilik Orta varsayılır. Bu hesaplar `Tahmini` ibaresiyle gösterilir ve günlük kaydını değiştirmez. Seriler, bir egzersizin kayıtlı antrenman günlerinde geriye doğru kesintisiz aynı seviyede olmasını sayar. Kullanıcı Günlük sayfasından zorluğu seçerse tahmin yerine seçilen değer kullanılır.
 
 Aynı kayıt üç görünümde kullanılır:
 
@@ -58,7 +61,7 @@ GitHub Pages statik olduğu için arayüzden girilen değişiklikler tarayıcın
 
 Repoya kalıcı olarak eklenen günlük kayıtları `GUNLUK_BASLANGIC` dizisinde tutulur. `GUNLUK_BASLANGIC_SURUMU` değiştiğinde yeni kayıtlar, tarayıcıdaki mevcut kişisel kayıtlar silinmeden birleştirilir. Düzeltilmesi gereken mevcut kayıt kimlikleri `GUNLUK_ZORUNLU_GUNCELLEME_IDLERI` ile bir defaya mahsus yenilenebilir. Başlangıç veri paketi en son 25 Eylül 2026 tarihli S2 antrenmanıyla güncellenmiştir. O gün bildirilen 20 kg calf raise yükü tek el için belirtilmediğinden aynen 20 kg olarak saklanır.
 
-25 Eylül S2 kaydında tek kol row 15 kg ile hafif geçtiği için bir sonraki hedef 20 kg plaka olarak işaretlendi; form bozulursa 15 kg'da kalınır. Reverse fly ve biceps varyasyonlarında her elde 7 kg, pullover'da 15 kg korunur. Hammer curl'ün son iki tekrarı tamamlanamadı; bir sonraki S2'de hammer curl, biceps curl'den önce gelir. Eski günlük kayıtları değiştirilmez.
+25 Eylül S2 kaydında tek kol row 15 kg ile hafif geçtiği için bir sonraki hedef 20 kg plaka olarak işaretlendi; form bozulursa 15 kg'da kalınır. Reverse fly ve biceps varyasyonlarında her elde 7 kg, pullover'da 15 kg korunur. Hammer curl'ün son iki tekrarı tamamlanamadı; bir sonraki S2'de hammer curl, biceps curl'den önce gelir. Eski günlük kayıtları değiştirilmez. Hedef ağırlıklar kart tablosundan çıkarılmıştır; aşağıdaki tarihsel notta yer alan hedef, 25 Eylül antrenmanı sonrası verilen açıklamadır.
 
 ## Egzersiz adlandırma standardı
 
