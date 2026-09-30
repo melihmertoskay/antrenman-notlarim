@@ -119,5 +119,21 @@ function gunlukYeniId(){return `kayit-${Date.now()}-${Math.random().toString(36)
 function gunlukKaydiEkle(kayit){const liste=gunlukKayitlariniGetir();liste.push({...kayit,id:kayit.id||gunlukYeniId()});gunlukKayitlariniKaydet(liste)}
 function gunlukKaydiGuncelle(id,kayit){const liste=gunlukKayitlariniGetir();const i=liste.findIndex(x=>x.id===id);if(i>-1){liste[i]={...liste[i],...kayit,id};gunlukKayitlariniKaydet(liste)}}
 function gunlukKaydiSil(id){gunlukKayitlariniKaydet(gunlukKayitlariniGetir().filter(x=>x.id!==id))}
+// Eski kayıtlar için geçici tahmin. Yeni kayıtların zorluk alanı her zaman önceliklidir.
+function gunlukZorluk(kayit, tumKayitlar=[]){
+  if(["Kolay","Orta","Zor"].includes(kayit.zorluk))return {seviye:kayit.zorluk,tahmini:false};
+  const not=(kayit.aciklama||"").toLocaleLowerCase("tr-TR");
+  if(/zorlanmad|zorlamadı/.test(not))return {seviye:"Kolay",tahmini:true};
+  if(/orta|ortalama/.test(not))return {seviye:"Orta",tahmini:true};
+  if(/zor|yarım kald|tamamlanamad|ağrı|dengede duramad/.test(not))return {seviye:"Zor",tahmini:true};
+  if(/rahat|hafif geç/.test(not))return {seviye:"Kolay",tahmini:true};
+  // Güne ilişkin genel ifadeler bir tek egzersiz satırında saklanmış olabilir.
+  const gunNotlari=tumKayitlar.filter(x=>x.gun===kayit.gun&&x.antrenman===kayit.antrenman).map(x=>x.aciklama||"");
+  if(gunNotlari.some(x=>/antrenman zorlamadı/i.test(x)))return {seviye:"Kolay",tahmini:true};
+  if(gunNotlari.some(x=>/ortalama zorlukta geçti/i.test(x)))return {seviye:"Orta",tahmini:true};
+  if(/^(çok )?rahat( ve | yüzme|$)/i.test(kayit.egzersiz||""))return {seviye:"Kolay",tahmini:true};
+  // Setler ve yük var ama zorluk söylenmemişse yalnızca yaklaşık bir başlangıç değeri.
+  return {seviye:"Orta",tahmini:true};
+}
 function gunlukTarihEtiketi(iso){const [y,a,g]=iso.split("-").map(Number);return new Intl.DateTimeFormat("tr-TR",{day:"numeric",month:"long",year:"numeric"}).format(new Date(y,a-1,g))}
 const GUNLUK=gunlukKayitlariniGetir();
