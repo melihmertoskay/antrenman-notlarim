@@ -20,6 +20,7 @@
     td{padding:17px 12px;border-top:1px solid #ebe8e0;vertical-align:middle;font-size:.94rem}tbody tr:first-child td{border-top:0}
     th:nth-child(1),td:nth-child(1){width:48px;color:var(--muted);text-align:center}th:nth-child(2),td:nth-child(2){width:92px}th:nth-child(4),td:nth-child(4){width:94px}th:nth-child(5),td:nth-child(5){width:104px}th:nth-child(6),td:nth-child(6){width:104px}
     .weight-col{display:none}.salon-karti .weight-col{display:table-cell}
+    .difficulty-col{font-size:.8rem;font-weight:700;line-height:1.35}.difficulty-col small{display:block;color:var(--muted);font-size:.7rem;font-weight:400}
     .time{color:var(--accent);font-size:.84rem;font-weight:800;white-space:nowrap}.exercise{font-weight:650}.target{font-weight:800;white-space:nowrap}.last-weight{font-size:.82rem;font-weight:700;line-height:1.35}
     .card-extras{border-top:1px solid var(--line);padding:4px 20px 12px}.card-extras details{border-bottom:1px solid #ebe8e0}.card-extras details:last-child{border-bottom:0}
     .card-extras > details > summary{padding:13px 2px;color:var(--accent);font-size:.86rem;font-weight:400;list-style:none;cursor:pointer}.card-extras > details > summary::-webkit-details-marker{display:none}.card-extras > details > summary::before{content:"+ ";}.card-extras > details[open] > summary::before{content:"− "}
@@ -60,7 +61,7 @@
   </header>
   <main><article class="card">
     <header class="card-header"><div class="card-code" id="cardCode">S1</div><div><h1 id="cardTitle"></h1><p class="card-meta" id="cardMeta"></p></div></header>
-    <div class="table-wrap"><table><thead><tr><th>Sıra</th><th>Süre</th><th>Hareket</th><th>Tekrar</th><th class="weight-col">Son ağırlık</th><th class="weight-col">Hedef ağırlık</th></tr></thead><tbody id="workoutRows"></tbody></table></div>
+    <div class="table-wrap"><table><thead><tr><th>Sıra</th><th>Süre</th><th>Hareket</th><th>Tekrar</th><th class="weight-col">Son ağırlık</th><th>Son zorluk</th></tr></thead><tbody id="workoutRows"></tbody></table></div>
     <div class="card-extras">
       <details id="journalDetails"><summary>Antrenman günlüğü</summary><div class="extra-content" id="journalContent"></div></details>
       <details id="aboutDetails"><summary>Antrenman hakkında</summary><div class="extra-content" id="aboutContent"></div></details>
@@ -125,39 +126,21 @@
       const kayit=liste.filter(k=>egzersizAdi(k.egzersiz)===ad&&k.agirlik).sort((a,b)=>b.gun.localeCompare(a.gun))[0];
       return kayit?kayit.agirlik:"Kayıt yok";
     }
-    // Açıkça belirlenmiş hedefler otomatik artıştan önce gelir.
-    const HEDEF_AGIRLIK_OVERRIDE={
-      S2:{
-        "Tek kol dambıl row":"20 kg (plaka)",
-        "Dambıl reverse fly":"Her elde 7 kg",
-        "Dambıl pullover":"15 kg",
-        "Dambıl hammer curl":"Her elde 7 kg",
-        "Dambıl biceps curl":"Her elde 7 kg"
-      },
-      S3:{
-        "Goblet squat":"20 kg",
-        "Deadlift":"50 kg",
-        "Dambıl sumo squat":"20 kg",
-        "Dambıl calf raise":"20 kg"
-      },
-      S1:{
-        "Dambıl bench press":"Her elde 12,5 kg",
-        "Dambıl lateral raise":"Her elde 7 kg",
-        "Incline dambıl press":"Her elde 10 kg",
-        "Dambıl shoulder press":"Her elde 7 kg",
-        "Dambıl overhead triceps extension":"10 kg"
+    function sonZorluk(egzersiz,liste){
+      if(/ısınma|havuza geçiş/i.test(egzersiz))return {metin:"—",tahmini:false};
+      const ad=egzersizAdi(egzersiz);
+      const kayitlar=liste.filter(k=>egzersizAdi(k.egzersiz)===ad).sort((a,b)=>b.gun.localeCompare(a.gun));
+      if(!kayitlar.length)return {metin:"Kayıt yok",tahmini:false};
+      const ilk=gunlukZorluk(kayitlar[0],liste),gunler=new Set();
+      let sayac=0,tahmini=false;
+      for(const k of kayitlar){
+        if(gunler.has(k.gun))continue;
+        gunler.add(k.gun);
+        const deger=gunlukZorluk(k,liste);
+        if(deger.seviye!==ilk.seviye)break;
+        sayac++;tahmini||=deger.tahmini;
       }
-    };
-    // Varsayılan hedef deadlift'te 5 kg, diğer ağırlıklı hareketlerde 2,5 kg artıştır.
-    function hedefAgirlik(sonDeger,egzersiz){
-      if(sonDeger==="—"||sonDeger==="Kayıt yok")return "—";
-      const eslesme=sonDeger.match(/^(.*?)([\d]+(?:,[\d]+)?)\s*kg$/i);
-      if(!eslesme)return "—";
-      const [,onEk,sayiMetni]=eslesme;
-      const artis=egzersizAdi(egzersiz)==="Deadlift"?5:2.5;
-      const hedef=parseFloat(sayiMetni.replace(",","."))+artis;
-      const hedefMetni=Number.isInteger(hedef)?String(hedef):String(hedef).replace(".",",");
-      return `${onEk}${hedefMetni} kg`;
+      return {metin:sayac+" × "+ilk.seviye,tahmini};
     }
     function showCard(code){
       const w=workouts[code];
@@ -165,7 +148,10 @@
       document.getElementById("cardCode").textContent=code;document.getElementById("cardTitle").textContent=w.title;document.getElementById("cardMeta").textContent=w.meta;document.title=code+" · "+w.title;
       const tumKayitlar=gunlukKayitlariniGetir();
       document.body.classList.toggle("salon-karti",code.startsWith("S"));
-      rows.innerHTML=w.rows.map((r,i)=>{const son=sonAgirlik(r[1],tumKayitlar);const hedef=(HEDEF_AGIRLIK_OVERRIDE[code]||{})[egzersizAdi(r[1])]||hedefAgirlik(son,r[1]);return `<tr><td>${i+1}</td><td class="time">${r[0]}</td><td class="exercise"><button class="exercise-button" data-exercise="${r[1]}">${r[1]}</button></td><td class="target">${r[2]}</td><td class="last-weight weight-col">${gunlukKacis(son)}</td><td class="last-weight weight-col">${gunlukKacis(hedef)}</td></tr>`}).join("");
+      rows.innerHTML=w.rows.map((r,i)=>{
+        const son=sonAgirlik(r[1],tumKayitlar),zorluk=sonZorluk(r[1],tumKayitlar);
+        return `<tr><td>${i+1}</td><td class="time">${r[0]}</td><td class="exercise"><button class="exercise-button" data-exercise="${r[1]}">${r[1]}</button></td><td class="target">${r[2]}</td><td class="last-weight weight-col">${gunlukKacis(son)}</td><td class="difficulty-col">${gunlukKacis(zorluk.metin)}${zorluk.tahmini?'<small>Tahmini</small>':""}</td></tr>`;
+      }).join("");
       const info=cardInfo[code];
       const kayitlar=tumKayitlar.filter(g=>g.antrenman===code).sort((a,b)=>b.gun.localeCompare(a.gun));
       const gruplar=kayitlar.reduce((o,k)=>((o[k.gun]||=[]).push(k),o),{});
