@@ -81,17 +81,22 @@ const GUNLUK_BASLANGIC=[
   {"id":"2026-10-14-s1-incline-dambil-press","gun":"2026-10-14","antrenman":"S1","egzersiz":"Incline dambıl press","agirlik":"Her elde 10 kg","setTekrar":"","zorluk":"Orta","aciklama":"Orta zorlukta geçti. Tekrar sayısı ayrıca belirtilmedi."},
   {"id":"2026-10-14-s1-dambil-shoulder-press","gun":"2026-10-14","antrenman":"S1","egzersiz":"Dambıl shoulder press","agirlik":"Her elde 7 kg","setTekrar":"","zorluk":"Orta","aciklama":"Orta zorlukta geçti. Tekrar sayısı ayrıca belirtilmedi."},
   {"id":"2026-10-14-s1-dambil-overhead-triceps-extension","gun":"2026-10-14","antrenman":"S1","egzersiz":"Dambıl overhead triceps extension","agirlik":"10 kg","setTekrar":"","zorluk":"Orta","aciklama":"Orta zorlukta geçti. Tekrar sayısı ayrıca belirtilmedi."},
-  {"id":"2026-10-17-s3-barbell-glute-bridge","gun":"2026-10-17","antrenman":"S3","egzersiz":"Barbell glute bridge","agirlik":"20 kg","setTekrar":"","zorluk":"Zor","aciklama":"20 kg ile yaptım; zor geldi. Set ve tekrar sayısı ayrıca belirtilmedi."}
+  {"id":"2026-10-17-s3-goblet-squat","gun":"2026-10-17","antrenman":"S3","egzersiz":"Goblet squat","agirlik":"20 kg","setTekrar":"3 × 10","zorluk":"Orta","aciklama":"Karttaki ağırlık ve tekrarlarla yaptım; orta zorlukta geçti."},
+  {"id":"2026-10-17-s3-deadlift","gun":"2026-10-17","antrenman":"S3","egzersiz":"Deadlift","agirlik":"50 kg","setTekrar":"3 × 5","zorluk":"Orta","aciklama":"Karttaki ağırlık ve tekrarlarla yaptım; orta zorlukta geçti."},
+  {"id":"2026-10-17-s3-barbell-glute-bridge","gun":"2026-10-17","antrenman":"S3","egzersiz":"Barbell glute bridge","agirlik":"20 kg","setTekrar":"3 × 10","zorluk":"Zor","aciklama":"Karttaki ağırlık ve tekrarlarla yaptım; zor geldi."},
+  {"id":"2026-10-17-s3-dambil-sumo-squat","gun":"2026-10-17","antrenman":"S3","egzersiz":"Dambıl sumo squat","agirlik":"20 kg","setTekrar":"3 × 10","zorluk":"Orta","aciklama":"Karttaki ağırlık ve tekrarlarla yaptım; orta zorlukta geçti."},
+  {"id":"2026-10-17-s3-dambil-calf-raise","gun":"2026-10-17","antrenman":"S3","egzersiz":"Dambıl calf raise","agirlik":"20 kg","setTekrar":"3 × 15","zorluk":"Kolay","aciklama":"Karttaki ağırlık ve tekrarlarla yaptım; kolay geçti. Yükün hangi elde tutulduğu belirtilmedi."}
 ];
 
 const GUNLUK_DEPOLAMA_ANAHTARI="antrenman-notlarim-gunluk-v1";
-const GUNLUK_BASLANGIC_SURUMU="2026-10-17-s3-bridge";
+const GUNLUK_BASLANGIC_SURUMU="2026-10-17-s3-complete";
 const GUNLUK_ZORUNLU_GUNCELLEME_IDLERI=new Set([
   "2026-09-20-s1-dambil-bench-press",
   "2026-09-20-s1-dambil-lateral-raise",
   "2026-09-20-s1-incline-dambil-press",
   "2026-09-20-s1-dambil-shoulder-press",
-  "2026-09-20-s1-dambil-overhead-triceps-extension"
+  "2026-09-20-s1-dambil-overhead-triceps-extension",
+  "2026-10-17-s3-barbell-glute-bridge"
 ]);
 const GUNLUK_SURUM_ANAHTARI=GUNLUK_DEPOLAMA_ANAHTARI+"-baslangic-surumu";
 function gunlukKopyala(deger){return JSON.parse(JSON.stringify(deger))}
