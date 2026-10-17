@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" aria-labelledby="baslik aciklama">
+<title id="baslik">Barbell glute bridge başlangıç ve bitiş pozisyonları</title>
+<desc id="aciklama">Sırt ve ayaklar yerde kalırken bar kalça üzerinde tutulur. Kalça yukarı kaldırılıp kontrollü indirilir.</desc>
+<rect width="800" height="360" rx="24" fill="#faf8f2"/>
+<rect x="20" y="22" width="370" height="315" rx="18" fill="#fffefa" stroke="#ddd9cf"/>
+<rect x="410" y="22" width="370" height="315" rx="18" fill="#fffefa" stroke="#ddd9cf"/>
+<text x="44" y="57" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#285e49">1 · Başlangıç</text>
+<text x="434" y="57" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#285e49">2 · Kalçayı kaldır</text>
+<g stroke="#a3a8a1" stroke-width="4"><path d="M48 284 H365"/><path d="M438 284 H755"/></g>
+<!-- Başlangıç: sırt yerde, dizler bükülü, ayaklar yerde -->
+<g stroke="#373d39" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<circle cx="88" cy="238" r="18" fill="#ece8df" stroke-width="4"/>
+<path d="M108 254 Q145 267 178 261 L228 255" stroke-width="20"/>
+<path d="M228 255 L269 200 L326 276" stroke-width="18"/>
+<path d="M309 278 H347" stroke-width="10"/>
+<path d="M162 256 L231 241" stroke-width="8"/>
+<circle cx="228" cy="255" r="17" fill="#bc6d54" stroke="none"/>
+<!-- bar visible as vertical plate edge in side view -->
+<path d="M194 231 H260" stroke-width="7"/>
+<circle cx="228" cy="231" r="15" fill="#64706b" stroke-width="4"/>
+</g>
+<!-- Bitiş: omuz yerde, kalça yükselmiş, diz ve ayak sabit -->
+<g stroke="#373d39" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<circle cx="478" cy="238" r="18" fill="#ece8df" stroke-width="4"/>
+<path d="M498 253 L527 258 L645 180" stroke-width="20"/>
+<path d="M645 180 L687 203 L716 276" stroke-width="18"/>
+<path d="M699 278 H737" stroke-width="10"/>
+<path d="M548 242 L640 165" stroke-width="8"/>
+<circle cx="645" cy="180" r="17" fill="#bc6d54" stroke="none"/>
+<path d="M612 157 H677" stroke-width="7"/>
+<circle cx="645" cy="157" r="15" fill="#64706b" stroke-width="4"/>
+</g>
+<path d="M635 251 V217" stroke="#bc6d54" stroke-width="5" stroke-linecap="round"/>
+<path d="m625 229 10-14 10 14" fill="none" stroke="#bc6d54" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="40" y="317" font-family="Arial,sans-serif" font-size="15" fill="#60655f">Sırt ve ayaklar yerde · Bar kalçanın üstünde</text>
+<text x="430" y="317" font-family="Arial,sans-serif" font-size="15" fill="#60655f">Kalçayı sık · Belini geriye atma</text>
+</svg>
