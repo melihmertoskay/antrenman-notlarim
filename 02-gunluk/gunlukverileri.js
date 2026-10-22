@@ -90,11 +90,16 @@ const GUNLUK_BASLANGIC=[
   {"id":"2026-10-18-s2-dambil-reverse-fly","gun":"2026-10-18","antrenman":"S2","egzersiz":"Dambıl reverse fly","agirlik":"Her elde 7 kg","setTekrar":"10 + 9 + 8","zorluk":"Zor","aciklama":"İkinci sette 9, son sette zorlanarak 8 tekrar çıktı. 3 × 10 tamamlanamadı."},
   {"id":"2026-10-18-s2-dambil-pullover","gun":"2026-10-18","antrenman":"S2","egzersiz":"Dambıl pullover","agirlik":"","setTekrar":"","zorluk":"Zor","aciklama":"Zor geçti. Bu antrenmandaki ağırlık ve tamamlanan tekrar sayısı belirtilmedi."},
   {"id":"2026-10-18-s2-dambil-hammer-curl","gun":"2026-10-18","antrenman":"S2","egzersiz":"Dambıl hammer curl","agirlik":"","setTekrar":"","zorluk":"Zor","aciklama":"Zor geçti. Bu antrenmandaki ağırlık ve tamamlanan tekrar sayısı belirtilmedi."},
-  {"id":"2026-10-18-s2-dambil-biceps-curl","gun":"2026-10-18","antrenman":"S2","egzersiz":"Dambıl biceps curl","agirlik":"","setTekrar":"Tamamlanamadı; tekrar sayısı belirtilmedi","zorluk":"Zor","aciklama":"Daha önce kolay gelen hareketi bu kez bitiremedim. Aranın etkili olabileceğini düşünüyorum."}
+  {"id":"2026-10-18-s2-dambil-biceps-curl","gun":"2026-10-18","antrenman":"S2","egzersiz":"Dambıl biceps curl","agirlik":"","setTekrar":"Tamamlanamadı; tekrar sayısı belirtilmedi","zorluk":"Zor","aciklama":"Daha önce kolay gelen hareketi bu kez bitiremedim. Aranın etkili olabileceğini düşünüyorum."},
+  {"id":"2026-10-21-s1-dambil-bench-press","gun":"2026-10-21","antrenman":"S1","egzersiz":"Dambıl bench press","agirlik":"Her elde 12,5 kg","setTekrar":"3 × 10","zorluk":"Orta","aciklama":"Kartta görünen son ağırlıkla yaptım; orta zorlukta geçti."},
+  {"id":"2026-10-21-s1-dambil-lateral-raise","gun":"2026-10-21","antrenman":"S1","egzersiz":"Dambıl lateral raise","agirlik":"Her elde 5 kg","setTekrar":"3 × 10","zorluk":"Orta","aciklama":"7 kg ile yapamadığım için 5 kg'a indirdim. Orta zorlukta geçti."},
+  {"id":"2026-10-21-s1-incline-dambil-press","gun":"2026-10-21","antrenman":"S1","egzersiz":"Incline dambıl press","agirlik":"Her elde 10 kg","setTekrar":"En az 2 set; tekrar sayısı ve son set belirtilmedi","zorluk":"Orta","aciklama":"Antrenman sırasında iki set yaptığımı bildirdim. Kollarım yorulduğu için 11–12 tekrara çıkmakta zorlandım; göğsümde yükü belirgin hissetmedim. Antrenman bitince genel zorluğu orta olarak değerlendirdim. Son setin yapılıp yapılmadığı bildirilmedi."},
+  {"id":"2026-10-21-s1-dambil-shoulder-press","gun":"2026-10-21","antrenman":"S1","egzersiz":"Dambıl shoulder press","agirlik":"Her elde 7 kg","setTekrar":"3 × 10","zorluk":"Orta","aciklama":"Son kayıtlı ağırlıkla yaptım; orta zorlukta geçti."},
+  {"id":"2026-10-21-s1-dambil-overhead-triceps-extension","gun":"2026-10-21","antrenman":"S1","egzersiz":"Dambıl overhead triceps extension","agirlik":"10 kg","setTekrar":"3 × 10","zorluk":"Orta","aciklama":"Son kayıtlı ağırlıkla yaptım; orta zorlukta geçti."}
 ];
 
 const GUNLUK_DEPOLAMA_ANAHTARI="antrenman-notlarim-gunluk-v1";
-const GUNLUK_BASLANGIC_SURUMU="2026-10-18-s2";
+const GUNLUK_BASLANGIC_SURUMU="2026-10-21-s1";
 const GUNLUK_ZORUNLU_GUNCELLEME_IDLERI=new Set([
   "2026-09-20-s1-dambil-bench-press",
   "2026-09-20-s1-dambil-lateral-raise",
