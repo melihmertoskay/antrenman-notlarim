@@ -69,7 +69,7 @@ Repoya kalıcı olarak eklenen günlük kayıtları `GUNLUK_BASLANGIC` dizisinde
 
 21 Ekim S1 günlüğünde bench press her elde 12,5 kg, lateral raise her elde 5 kg, incline press her elde 10 kg, shoulder press her elde 7 kg, triceps extension 10 kg ile Orta olarak kaydedildi. Lateral raise 7 kg yapılamadığı için 5 kg'a indirildi. Incline için antrenman sırasında iki set bildirildi; kesin tekrarlar ve son setin yapılıp yapılmadığı belirtilmedi. Diğer hareketlerde kartın 3 × 10 düzeni kullanıldı.
 
-22 Ekim S2 günlüğünde tek kol row Kolay, reverse fly Zor, pullover Orta; hammer ve biceps curl her elde 7 kg ile Orta kaydedildi. Curl hareketleri ayrıca çok zorladı. Reverse fly'ın yalnız son setinde her elde 5 kg kullanıldığı teyit edildi; diğer set yükleri ve tekrarlar belirtilmedi. Row ve pullover'ın o günkü yükleri bildirilmediği için boş kaldı. Kullanıcı son birkaç antrenmanda önceki ağırlıkları tamamlamakta zorlandığını bildirdi.
+22 Ekim S2 günlüğünde tek kol row Kolay, reverse fly Zor, pullover Orta; hammer ve biceps curl her elde önce 10 kg denenip çok zorladığı için 7 kg'a indirildi; 7 kg ile Orta geçti. Denenen ağırlıkla yapılan tekrar sayısı bildirilmedi. Reverse fly'ın yalnız son setinde her elde 5 kg kullanıldığı teyit edildi; diğer set yükleri ve tekrarlar belirtilmedi. Row ve pullover'ın o günkü yükleri bildirilmediği için boş kaldı. Kullanıcı son birkaç antrenmanda önceki ağırlıkları tamamlamakta zorlandığını bildirdi.
 
 ## Egzersiz adlandırma standardı
 
