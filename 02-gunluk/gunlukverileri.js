@@ -99,19 +99,21 @@ const GUNLUK_BASLANGIC=[
   {"id":"2026-10-22-s2-tek-kol-dambil-row","gun":"2026-10-22","antrenman":"S2","egzersiz":"Tek kol dambıl row","agirlik":"","setTekrar":"","zorluk":"Kolay","aciklama":"Kolay geçti. Kullanılan ağırlık ve kesin tekrar sayısı bildirilmedi."},
   {"id":"2026-10-22-s2-dambil-reverse-fly","gun":"2026-10-22","antrenman":"S2","egzersiz":"Dambıl reverse fly","agirlik":"Son sette her elde 5 kg","setTekrar":"3 set; kesin tekrar sayısı bildirilmedi","zorluk":"Zor","aciklama":"Zor geçti; son sette her elde 5 kg'a düştüm. İlk iki setteki yük ve tekrarlar belirtilmedi."},
   {"id":"2026-10-22-s2-dambil-pullover","gun":"2026-10-22","antrenman":"S2","egzersiz":"Dambıl pullover","agirlik":"","setTekrar":"","zorluk":"Orta","aciklama":"Orta geçti. Kullanılan ağırlık ve kesin tekrar sayısı bildirilmedi."},
-  {"id":"2026-10-22-s2-dambil-hammer-curl","gun":"2026-10-22","antrenman":"S2","egzersiz":"Dambıl hammer curl","agirlik":"Her elde 7 kg","setTekrar":"","zorluk":"Orta","aciklama":"Çok zorladı; antrenman sonrası genel değerlendirmem orta. Kesin tekrar sayısı bildirilmedi."},
-  {"id":"2026-10-22-s2-dambil-biceps-curl","gun":"2026-10-22","antrenman":"S2","egzersiz":"Dambıl biceps curl","agirlik":"Her elde 7 kg","setTekrar":"","zorluk":"Orta","aciklama":"Çok zorladı; antrenman sonrası genel değerlendirmem orta. Kesin tekrar sayısı bildirilmedi. Son birkaç antrenmanda eskiden yaptığım yükleri tamamlamakta zorlanıyorum."}
+  {"id":"2026-10-22-s2-dambil-hammer-curl","gun":"2026-10-22","antrenman":"S2","egzersiz":"Dambıl hammer curl","agirlik":"Her elde 7 kg (önce 10 kg denendi)","setTekrar":"","zorluk":"Orta","aciklama":"Önce her elde 10 kg denedim, çok zorladı; sonra her elde 7 kg'a indirdim ve orta zorlukta geçti. Deneme ve çalışma setlerinin kesin tekrar sayıları bildirilmedi."},
+  {"id":"2026-10-22-s2-dambil-biceps-curl","gun":"2026-10-22","antrenman":"S2","egzersiz":"Dambıl biceps curl","agirlik":"Her elde 7 kg (önce 10 kg denendi)","setTekrar":"","zorluk":"Orta","aciklama":"Önce her elde 10 kg denedim, çok zorladı; sonra her elde 7 kg'a indirdim ve orta zorlukta geçti. Son birkaç antrenmanda eski ağırlıkları tamamlamakta zorlanıyorum. Deneme ve çalışma setlerinin kesin tekrar sayıları bildirilmedi."}
 ];
 
 const GUNLUK_DEPOLAMA_ANAHTARI="antrenman-notlarim-gunluk-v1";
-const GUNLUK_BASLANGIC_SURUMU="2026-10-22-s2";
+const GUNLUK_BASLANGIC_SURUMU="2026-10-22-s2-curl-correction";
 const GUNLUK_ZORUNLU_GUNCELLEME_IDLERI=new Set([
   "2026-09-20-s1-dambil-bench-press",
   "2026-09-20-s1-dambil-lateral-raise",
   "2026-09-20-s1-incline-dambil-press",
   "2026-09-20-s1-dambil-shoulder-press",
   "2026-09-20-s1-dambil-overhead-triceps-extension",
-  "2026-10-17-s3-barbell-glute-bridge"
+  "2026-10-17-s3-barbell-glute-bridge",
+  "2026-10-22-s2-dambil-hammer-curl",
+  "2026-10-22-s2-dambil-biceps-curl"
 ]);
 const GUNLUK_SURUM_ANAHTARI=GUNLUK_DEPOLAMA_ANAHTARI+"-baslangic-surumu";
 function gunlukKopyala(deger){return JSON.parse(JSON.stringify(deger))}
