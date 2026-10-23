@@ -59,7 +59,7 @@ Aynı kayıt üç görünümde kullanılır:
 
 GitHub Pages statik olduğu için arayüzden girilen değişiklikler tarayıcının `localStorage` alanında saklanır. Aynı tarayıcıda kalır; cihazlar arasında eşitlenmez. Cihazlar arası eşitleme için ileride çevrim içi veritabanı ve kullanıcı girişi eklenmelidir.
 
-Repoya kalıcı olarak eklenen günlük kayıtları `GUNLUK_BASLANGIC` dizisinde tutulur. `GUNLUK_BASLANGIC_SURUMU` değiştiğinde yeni kayıtlar, tarayıcıdaki mevcut kişisel kayıtlar silinmeden birleştirilir. Düzeltilmesi gereken mevcut kayıt kimlikleri `GUNLUK_ZORUNLU_GUNCELLEME_IDLERI` ile bir defaya mahsus yenilenebilir. Başlangıç veri paketi en son 21 Ekim 2026 tarihli S1 antrenmanıyla güncellenmiştir. 24 Eylül ve 17 Ekim tarihlerindeki 20 kg calf raise yükü tek el için belirtilmediğinden aynen 20 kg olarak saklanır.
+Repoya kalıcı olarak eklenen günlük kayıtları `GUNLUK_BASLANGIC` dizisinde tutulur. `GUNLUK_BASLANGIC_SURUMU` değiştiğinde yeni kayıtlar, tarayıcıdaki mevcut kişisel kayıtlar silinmeden birleştirilir. Düzeltilmesi gereken mevcut kayıt kimlikleri `GUNLUK_ZORUNLU_GUNCELLEME_IDLERI` ile bir defaya mahsus yenilenebilir. Başlangıç veri paketi en son 22 Ekim 2026 tarihli S2 antrenmanıyla güncellenmiştir. 24 Eylül ve 17 Ekim tarihlerindeki 20 kg calf raise yükü tek el için belirtilmediğinden aynen 20 kg olarak saklanır.
 
 25 Eylül S2 kaydında tek kol row 15 kg ile hafif geçtiği için bir sonraki hedef 20 kg plaka olarak işaretlendi; form bozulursa 15 kg'da kalınır. Reverse fly ve biceps varyasyonlarında her elde 7 kg, pullover'da 15 kg korunur. Hammer curl'ün son iki tekrarı tamamlanamadı; bir sonraki S2'de hammer curl, biceps curl'den önce gelir. Eski günlük kayıtları değiştirilmez. Hedef ağırlıklar kart tablosundan çıkarılmıştır; aşağıdaki tarihsel notta yer alan hedef, 25 Eylül antrenmanı sonrası verilen açıklamadır.
 
@@ -68,6 +68,8 @@ Repoya kalıcı olarak eklenen günlük kayıtları `GUNLUK_BASLANGIC` dizisinde
 18 Ekim S2 günlüğünde tek kol row Kolay; reverse fly, pullover, hammer curl ve biceps curl Zor olarak kaydedildi. Reverse fly her elde 7 kg ile 10 + 9 + 8 tekrar yapıldı; biceps curl tamamlanamadı. O günün diğer hareketlerine ait kullanılan ağırlıklar ve kesin tekrar sayıları bildirilmediği için boş tutuldu. Son ağırlık göstergesi boş yükleri atlayıp önceki teyit edilmiş yükü gösterir. Antrenman tarihi, 18 Ekim akşamındaki reverse fly mesajı ve hemen ardından gece yarısından sonra gelen S2 bitirme mesajının aynı seansa ilişkin olduğu kabul edilerek 18 Ekim yazıldı.
 
 21 Ekim S1 günlüğünde bench press her elde 12,5 kg, lateral raise her elde 5 kg, incline press her elde 10 kg, shoulder press her elde 7 kg, triceps extension 10 kg ile Orta olarak kaydedildi. Lateral raise 7 kg yapılamadığı için 5 kg'a indirildi. Incline için antrenman sırasında iki set bildirildi; kesin tekrarlar ve son setin yapılıp yapılmadığı belirtilmedi. Diğer hareketlerde kartın 3 × 10 düzeni kullanıldı.
+
+22 Ekim S2 günlüğünde tek kol row Kolay, reverse fly Zor, pullover Orta; hammer ve biceps curl her elde 7 kg ile Orta kaydedildi. Curl hareketleri ayrıca çok zorladı. Reverse fly'ın yalnız son setinde her elde 5 kg kullanıldığı teyit edildi; diğer set yükleri ve tekrarlar belirtilmedi. Row ve pullover'ın o günkü yükleri bildirilmediği için boş kaldı. Kullanıcı son birkaç antrenmanda önceki ağırlıkları tamamlamakta zorlandığını bildirdi.
 
 ## Egzersiz adlandırma standardı
 
