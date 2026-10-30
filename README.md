@@ -59,7 +59,7 @@ Aynı kayıt üç görünümde kullanılır:
 
 GitHub Pages statik olduğu için arayüzden girilen değişiklikler tarayıcının `localStorage` alanında saklanır. Aynı tarayıcıda kalır; cihazlar arasında eşitlenmez. Cihazlar arası eşitleme için ileride çevrim içi veritabanı ve kullanıcı girişi eklenmelidir.
 
-Repoya kalıcı olarak eklenen günlük kayıtları `GUNLUK_BASLANGIC` dizisinde tutulur. `GUNLUK_BASLANGIC_SURUMU` değiştiğinde yeni kayıtlar, tarayıcıdaki mevcut kişisel kayıtlar silinmeden birleştirilir. Düzeltilmesi gereken mevcut kayıt kimlikleri `GUNLUK_ZORUNLU_GUNCELLEME_IDLERI` ile bir defaya mahsus yenilenebilir. Başlangıç veri paketi en son 22 Ekim 2026 tarihli S2 antrenmanıyla güncellenmiştir. 24 Eylül ve 17 Ekim tarihlerindeki 20 kg calf raise yükü tek el için belirtilmediğinden aynen 20 kg olarak saklanır.
+Repoya kalıcı olarak eklenen günlük kayıtları `GUNLUK_BASLANGIC` dizisinde tutulur. `GUNLUK_BASLANGIC_SURUMU` değiştiğinde yeni kayıtlar, tarayıcıdaki mevcut kişisel kayıtlar silinmeden birleştirilir. Düzeltilmesi gereken mevcut kayıt kimlikleri `GUNLUK_ZORUNLU_GUNCELLEME_IDLERI` ile bir defaya mahsus yenilenebilir. Başlangıç veri paketi en son 29 Ekim 2026 tarihli S1 antrenmanıyla güncellenmiştir. 24 Eylül ve 17 Ekim tarihlerindeki 20 kg calf raise yükü tek el için belirtilmediğinden aynen 20 kg olarak saklanır.
 
 25 Eylül S2 kaydında tek kol row 15 kg ile hafif geçtiği için bir sonraki hedef 20 kg plaka olarak işaretlendi; form bozulursa 15 kg'da kalınır. Reverse fly ve biceps varyasyonlarında her elde 7 kg, pullover'da 15 kg korunur. Hammer curl'ün son iki tekrarı tamamlanamadı; bir sonraki S2'de hammer curl, biceps curl'den önce gelir. Eski günlük kayıtları değiştirilmez. Hedef ağırlıklar kart tablosundan çıkarılmıştır; aşağıdaki tarihsel notta yer alan hedef, 25 Eylül antrenmanı sonrası verilen açıklamadır.
 
@@ -70,6 +70,10 @@ Repoya kalıcı olarak eklenen günlük kayıtları `GUNLUK_BASLANGIC` dizisinde
 21 Ekim S1 günlüğünde bench press her elde 12,5 kg, lateral raise her elde 5 kg, incline press her elde 10 kg, shoulder press her elde 7 kg, triceps extension 10 kg ile Orta olarak kaydedildi. Lateral raise 7 kg yapılamadığı için 5 kg'a indirildi. Incline için antrenman sırasında iki set bildirildi; kesin tekrarlar ve son setin yapılıp yapılmadığı belirtilmedi. Diğer hareketlerde kartın 3 × 10 düzeni kullanıldı.
 
 22 Ekim S2 günlüğünde tek kol row Kolay, reverse fly Zor, pullover Orta; hammer ve biceps curl her elde önce 10 kg denenip çok zorladığı için 7 kg'a indirildi; 7 kg ile Orta geçti. Denenen ağırlıkla yapılan tekrar sayısı bildirilmedi. Reverse fly'ın yalnız son setinde her elde 5 kg kullanıldığı teyit edildi; diğer set yükleri ve tekrarlar belirtilmedi. Row ve pullover'ın o günkü yükleri bildirilmediği için boş kaldı. Kullanıcı son birkaç antrenmanda önceki ağırlıkları tamamlamakta zorlandığını bildirdi.
+
+23 Ekim S3, 17 Ekim S3'ün tüm ağırlık, tekrar ve zorluk seviyeleriyle tekrarlandı: goblet squat 20 kg 3 × 10 Orta; deadlift 50 kg 3 × 5 Orta; barbell glute bridge 20 kg 3 × 10 Zor; sumo squat 20 kg 3 × 10 Orta; calf raise 20 kg 3 × 15 Kolay.
+
+29 Ekim S1'de son S1 ağırlıkları korundu: bench press her elde 12,5 kg Orta; lateral raise her elde 5 kg Kolay; incline press her elde 10 kg Orta; shoulder press her elde 7 kg Orta; overhead triceps extension 10 kg Orta. Bu güne ait kesin set ve tekrar sayıları bildirilmediği için boş bırakıldı.
 
 ## Egzersiz adlandırma standardı
 
