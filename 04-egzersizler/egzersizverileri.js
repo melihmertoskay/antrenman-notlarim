@@ -41,6 +41,12 @@ const EGZERSIZLER={
     "attention": "Hareketi kontrollü yap; keskin ağrı hissedersen dur.",
     "easier": "Hareket aralığını, süreyi veya direnci azalt."
   },
+  "Tek kol kablo row": {
+    "application": "Alt makaraya tekli tutamaç tak. Makineye dönük, ayakların dengeli ve dizlerin hafif bükülü dur. Kolu öne uzat; dirseğini gövdenin yanından geriye çekip tutamacı beline yaklaştır. Yavaşça başlangıca dön. İki kolu ayrı çalıştır.",
+    "muscles": "Sırt (kanat ve kürek kemikleri arası), arka omuz; ön kol destek olur",
+    "attention": "Gövdeni geriye savurma veya omzunu kulağına kaldırma. Kabloyu aniden bırakma. Makine yükü dambıl ağırlığıyla doğrudan karşılaştırılmaz.",
+    "easier": "Daha hafif plaka seç; her tekrar boyunca gövden sabit kalsın."
+  },
   "Tek kol dambıl row": {
     "application": "Bir elini ve dizini bench’e yerleştir; diğer eldeki dambılı dirseği geriye çekerek gövdene yaklaştır.",
     "muscles": "Sırt, arka omuz ve ön kol",
@@ -342,3 +348,5 @@ EGZERSIZ_GORSELLERI["Omuz ve kol ısınması"]="/antrenman-notlarim/04-egzersizl
 EGZERSIZ_GORSELLERI["Dambıl lateral raise"]="/antrenman-notlarim/04-egzersizler/gorseller/dambil-lateral-raise.webp";
 EGZERSIZ_GORSELLERI["Incline dambıl press"]="/antrenman-notlarim/04-egzersizler/gorseller/incline-dambil-press.webp";
 EGZERSIZ_GORSELLERI["Dambıl overhead triceps extension"]="/antrenman-notlarim/04-egzersizler/gorseller/dambil-overhead-triceps-extension.webp";
+
+EGZERSIZ_GORSELLERI["Tek kol kablo row"]="/antrenman-notlarim/04-egzersizler/gorseller/tek-kol-kablo-row.svg";
