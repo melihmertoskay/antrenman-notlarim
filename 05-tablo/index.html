@@ -18,9 +18,9 @@
     .nav a:hover{background:#ebe8e0;color:var(--text)}
     .nav .active{background:var(--soft);color:var(--accent)}
     main{width:min(100% - 16px,1100px);margin:16px auto 48px}
-    .filters{display:flex;gap:5px;overflow-x:auto;margin-bottom:10px;padding:1px 0 3px}
+    .filters{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;padding:1px 0 3px}
     .filter{flex:none;min-width:40px;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--text);font-size:.82rem;cursor:pointer}
-    .filter[aria-pressed="true"]{border-color:var(--accent);background:var(--soft);color:var(--accent);font-weight:800}
+    .filter[aria-pressed="true"]{border-color:var(--accent);background:var(--soft);color:var(--accent);font-weight:800}.old-toggle{margin-left:auto}
     .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:13px;background:var(--card)}
     table{width:max-content;min-width:100%;border-collapse:separate;border-spacing:0}
     th,td{border-right:1px solid #ebe8e0;border-bottom:1px solid #ebe8e0;text-align:center;vertical-align:middle}
@@ -79,17 +79,20 @@
       <button class="filter" type="button" data-filter="S2" aria-pressed="false">S2</button>
       <button class="filter" type="button" data-filter="S3" aria-pressed="false">S3</button>
       <button class="filter" type="button" data-filter="S4" aria-pressed="false">S4</button>
+      <button class="filter old-toggle" type="button" id="oldToggle" aria-pressed="false">Eskiler: Gizli</button>
     </div>
     <div class="scroll" id="tableRegion" role="region" aria-label="Salon antrenmanları ağırlık tablosu" tabindex="0"></div>
     <div class="legend"><span class="easy">Kolay</span><span class="medium">Orta</span><span class="hard">Zor</span></div>
   </main>
   <div class="modal" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailTitle"><div class="dialog"><div class="dialog-head"><h2 id="detailTitle"></h2><button class="dialog-close" id="detailClose" type="button" aria-label="Kapat">×</button></div><div class="detail-body" id="detailBody"></div></div></div>
-  <script>["../02-gunluk/gunlukverileri.js","../04-egzersizler/egzersizverileri.js","../04-egzersizler/kodlar.js"].forEach(function(y){document.write('<script src="'+y+'?v='+Date.now()+'"><\/script>')});</script>
+  <script>["../02-gunluk/gunlukverileri.js","../04-egzersizler/egzersizverileri.js","../04-egzersizler/kodlar.js","../03-antrenmanlar/salon-kart-satirlari.js"].forEach(function(y){document.write('<script src="'+y+'?v='+Date.now()+'"><\/script>')});</script>
   <script>
     (function(){
       const region=document.getElementById("tableRegion"),filters=document.getElementById("filters"),modal=document.getElementById("detailModal"),modalTitle=document.getElementById("detailTitle"),modalBody=document.getElementById("detailBody");
       let popupOpen=false;
-      let selected="Tümü";
+      let selected="Tümü",showOld=false;
+      const cardNames=Object.fromEntries(["S1","S2","S3","S4"].map(function(code){return [code,SALON_KART_SATIRLARI[code].slice(1).map(function(row){return egzersizAdi(row[1])})]}));
+      function activeNames(){const codes=selected==="Tümü"?["S1","S2","S3","S4"]:[selected];return [...new Set(codes.flatMap(function(code){return cardNames[code]}))]}
       const months=["Oca","Şub","Mar","Nis","May","Haz","Tem","Ağu","Eyl","Eki","Kas","Ara"];
       function dateLabel(iso,showYear){const p=iso.split("-");return Number(p[2])+" "+months[Number(p[1])-1]+(showYear?" "+p[0].slice(2):"")}
       function weightLabel(weight){const match=(weight||"").match(/(\d+(?:[,.]\d+)?)\s*kg\b/i);return match?match[1]+" kg":(weight||"—")}
@@ -102,11 +105,13 @@
       }
       function render(){
         const all=gunlukKayitlariniGetir();
-        const records=all.filter(function(r){return /^S[1-4]$/.test(r.antrenman)&&(selected==="Tümü"||r.antrenman===selected)&&r.gun&&r.egzersiz});
+        const active=activeNames();
+        const records=all.filter(function(r){return /^S[1-4]$/.test(r.antrenman)&&(selected==="Tümü"||r.antrenman===selected)&&r.gun&&r.egzersiz&&(showOld||active.includes(egzersizAdi(r.egzersiz)))});
         if(!records.length){region.innerHTML='<p class="empty">Bu antrenman için günlük kaydı yok.</p>';return}
         const dates=[...new Set(records.map(function(r){return r.gun}))].sort();
         const showYear=new Set(dates.map(function(d){return d.slice(0,4)})).size>1;
-        const names=[...new Set(records.map(function(r){return egzersizAdi(r.egzersiz)}))].sort(function(a,b){return a.localeCompare(b,"tr")});
+        const oldNames=showOld?[...new Set(records.map(function(r){return egzersizAdi(r.egzersiz)}))].filter(function(name){return !active.includes(name)}).sort(function(a,b){const ka=EGZERSIZ_KODLARI[a]||"Z99",kb=EGZERSIZ_KODLARI[b]||"Z99";return ka.localeCompare(kb,undefined,{numeric:true})}):[];
+        const names=active.concat(oldNames);
         const cells=new Map();
         records.forEach(function(r){const key=egzersizAdi(r.egzersiz)+"\u0000"+r.gun;if(!cells.has(key))cells.set(key,[]);cells.get(key).push(r)});
         let out='<table><thead><tr><th scope="col">Hareket</th>';
@@ -130,6 +135,7 @@
         region.innerHTML=out+'</tbody></table>';
         region.scrollLeft=region.scrollWidth;
       }
+      document.getElementById("oldToggle").addEventListener("click",function(){showOld=!showOld;this.setAttribute("aria-pressed",String(showOld));this.textContent=showOld?"Eskiler: Açık":"Eskiler: Gizli";render()});
       filters.addEventListener("click",function(event){
         const button=event.target.closest("[data-filter]");
         if(!button)return;
