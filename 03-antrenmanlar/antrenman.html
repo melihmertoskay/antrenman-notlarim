@@ -73,18 +73,14 @@
       <div class="modal-body" id="modalBody"></div>
     </div>
   </div>
-  <script>["../02-gunluk/gunlukverileri.js","../04-egzersizler/egzersizverileri.js","../04-egzersizler/kodlar.js"].forEach(y=>document.write('<script src="'+y+'?v='+Date.now()+'"><\/script>'));</script>
+  <script>["../02-gunluk/gunlukverileri.js","../04-egzersizler/egzersizverileri.js","../04-egzersizler/kodlar.js","salon-kart-satirlari.js"].forEach(y=>document.write('<script src="'+y+'?v='+Date.now()+'"><\/script>'));</script>
   <script>
     const exerciseDetails=typeof EGZERSIZLER!=="undefined"?EGZERSIZLER:{};
     const workouts={
-      S1:{title:ANTRENMAN_ADI.S1,meta:"40 dakika · Set araları 60 saniye",color:["#285e49","#e5eee9"],rows:[
-        ["0–5 dk","Omuz ve kol ısınması","5 dk"],["5–13 dk","Dambıl bench press","3 × 10"],["13–20 dk","Dambıl lateral raise","3 × 10"],["20–28 dk","Incline dambıl press","3 × 10"],["28–35 dk","Dambıl shoulder press","3 × 10"],["35–40 dk","Dambıl overhead triceps extension","3 × 10"]]},
-      S2:{title:ANTRENMAN_ADI.S2,meta:"40 dakika · Set araları 60 saniye",color:["#285e49","#e5eee9"],rows:[
-        ["0–5 dk","Omuz ve sırt ısınması","5 dk"],["5–14 dk","Tek kol kablo row","Her kol 3 × 10"],["14–21 dk","Dambıl reverse fly","3 × 10"],["21–28 dk","Dambıl pullover","3 × 10"],["28–34 dk","Dambıl hammer curl","3 × 10"],["34–40 dk","Dambıl biceps curl","3 × 10"]]},
-      S3:{title:ANTRENMAN_ADI.S3,meta:"40 dakika · Set araları 60 saniye",color:["#285e49","#e5eee9"],rows:[
-        ["0–5 dk","Squat ve bacak ısınması","5 dk"],["5–13 dk","Goblet squat","3 × 10"],["13–21 dk","Deadlift","3 × 5"],["21–29 dk","Barbell glute bridge","3 × 10"],["29–36 dk","Dambıl sumo squat","3 × 10"],["36–40 dk","Dambıl calf raise","3 × 15"]]},
-      S4:{title:ANTRENMAN_ADI.S4,meta:"40 dakika · Set araları 60 saniye",color:["#285e49","#e5eee9"],rows:[
-        ["0–5 dk","Genel ısınma","5 dk"],["5–12 dk","Goblet squat","3 × 10"],["12–19 dk","Dambıl bench press","3 × 10"],["19–27 dk","Tek kol dambıl row","3 × 10"],["27–34 dk","Dambıl Romanian deadlift","3 × 10"],["34–40 dk","Dambıl shoulder press","3 × 10"]]},
+      S1:{title:ANTRENMAN_ADI.S1,meta:"40 dakika · Set araları 60 saniye",color:["#285e49","#e5eee9"],rows:SALON_KART_SATIRLARI.S1},
+      S2:{title:ANTRENMAN_ADI.S2,meta:"40 dakika · Set araları 60 saniye",color:["#285e49","#e5eee9"],rows:SALON_KART_SATIRLARI.S2},
+      S3:{title:ANTRENMAN_ADI.S3,meta:"40 dakika · Set araları 60 saniye",color:["#285e49","#e5eee9"],rows:SALON_KART_SATIRLARI.S3},
+      S4:{title:ANTRENMAN_ADI.S4,meta:"40 dakika · Set araları 60 saniye",color:["#285e49","#e5eee9"],rows:SALON_KART_SATIRLARI.S4},
       E1:{title:ANTRENMAN_ADI.E1,meta:"40 dakika · Set araları 60 saniye",color:["#985a27","#f4e8dc"],rows:[
         ["0–5 dk","Omuz ve kol ısınması","5 dk"],["5–13 dk","Şınav","3 × 10"],["13–21 dk","Pike şınavı","3 × 8"],["21–29 dk","Dar tutuş şınav","3 × 8"],["29–35 dk","Plank shoulder tap","3 × 10"],["35–40 dk","Side plank","3 × 30 sn"]]},
       E2:{title:ANTRENMAN_ADI.E2,meta:"40 dakika · Set araları 60 saniye",color:["#985a27","#f4e8dc"],rows:[
