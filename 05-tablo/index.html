@@ -17,35 +17,34 @@
     .nav a{flex:none;padding:8px 12px;border-radius:8px;color:var(--muted);font-size:.85rem;font-weight:700;white-space:nowrap}
     .nav a:hover{background:#ebe8e0;color:var(--text)}
     .nav .active{background:var(--soft);color:var(--accent)}
-    main{width:min(100% - 24px,1100px);margin:24px auto 56px}
-    .filters{display:flex;gap:7px;overflow-x:auto;margin-bottom:15px;padding:1px 0 4px}
-    .filter{flex:none;min-width:46px;padding:8px 12px;border:1px solid var(--line);border-radius:9px;background:var(--card);color:var(--text);cursor:pointer}
+    main{width:min(100% - 16px,1100px);margin:16px auto 48px}
+    .filters{display:flex;gap:5px;overflow-x:auto;margin-bottom:10px;padding:1px 0 3px}
+    .filter{flex:none;min-width:40px;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--text);font-size:.82rem;cursor:pointer}
     .filter[aria-pressed="true"]{border-color:var(--accent);background:var(--soft);color:var(--accent);font-weight:800}
     .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:13px;background:var(--card)}
     table{width:max-content;min-width:100%;border-collapse:separate;border-spacing:0}
     th,td{border-right:1px solid #ebe8e0;border-bottom:1px solid #ebe8e0;text-align:center;vertical-align:middle}
     tr>:last-child{border-right:0}
     tbody tr:last-child>*{border-bottom:0}
-    thead th{height:54px;min-width:106px;padding:8px 5px;background:#f6f4ee;font-size:.77rem}
-    thead th:first-child,tbody th{position:sticky;left:0;z-index:2;width:190px;min-width:190px;max-width:190px;text-align:left}
-    thead th:first-child{z-index:3;padding:12px;background:#f6f4ee;color:var(--muted);font-weight:650}
-    tbody th{height:62px;padding:8px 11px;background:var(--card);font-size:.82rem;font-weight:650}
-    tbody td{min-width:106px;padding:6px 5px}
+    thead th{height:40px;min-width:68px;padding:4px 3px;background:#f6f4ee;font-size:.7rem}
+    thead th:first-child,tbody th{position:sticky;left:0;z-index:2;width:148px;min-width:148px;max-width:148px;text-align:left}
+    thead th:first-child{z-index:3;padding:7px;background:#f6f4ee;color:var(--muted);font-weight:650}
+    tbody th{height:42px;padding:5px 7px;background:var(--card);font-size:.76rem;font-weight:650}
+    tbody td{min-width:68px;padding:3px 2px;font-size:.72rem}
     .date-link,.exercise-link{display:block;width:100%;border:0;background:none;color:inherit;cursor:pointer}
-    .date-link{padding:5px 1px;color:var(--accent);font-size:.77rem;font-weight:800}
+    .date-link{padding:3px 1px;color:var(--accent);font-size:.7rem;font-weight:750;white-space:nowrap}
     .exercise-link{text-align:left;font-size:inherit;font-weight:inherit;line-height:1.35}
     .date-link:hover,.exercise-link:hover{text-decoration:underline}
-    .entry{display:block;padding:6px 3px;border-radius:7px;font-size:.76rem;font-weight:750;line-height:1.3}
-    .entry+.entry{margin-top:4px}
-    .entry.easy{background:#e0f0e4;color:#22643b}
-    .entry.medium{background:#fff0c8;color:#765507}
-    .entry.hard{background:#f7dcd8;color:#9a3430}
-    .entry.unknown{background:#eeeae3;color:#555b55}
+    .entry{display:block;font-weight:750;line-height:1.3;white-space:nowrap}
+    .entry+.entry{margin-top:3px}
+    .entry.easy{color:#277747}
+    .entry.medium{color:#9a7009}
+    .entry.hard{color:#b34038}
+    .entry.unknown{color:#73766f}
     .empty{padding:24px;color:var(--muted);font-size:.88rem}
-    .legend{display:flex;flex-wrap:wrap;gap:12px;margin:12px 2px 0;color:var(--muted);font-size:.75rem}
-    .legend i{display:inline-block;width:10px;height:10px;margin-right:5px;border-radius:3px;vertical-align:middle}
-    .legend .easy{background:#e0f0e4}.legend .medium{background:#fff0c8}.legend .hard{background:#f7dcd8}
-    @media(max-width:560px){main{margin-top:17px}thead th:first-child,tbody th{width:130px;min-width:130px;max-width:130px}thead th:not(:first-child),tbody td{min-width:90px}tbody th{padding:7px;font-size:.76rem}}
+    .legend{display:flex;flex-wrap:wrap;gap:12px;margin:9px 2px 0;font-size:.72rem}
+    .legend .easy{color:#277747}.legend .medium{color:#9a7009}.legend .hard{color:#b34038}
+    @media(max-width:560px){main{margin-top:12px}thead th:first-child,tbody th{width:112px;min-width:112px;max-width:112px}thead th:not(:first-child),tbody td{min-width:64px}tbody th{padding:4px 5px;font-size:.7rem}tbody td{font-size:.69rem}}
   </style>
 </head>
 <body>
@@ -59,7 +58,7 @@
       <button class="filter" type="button" data-filter="S4" aria-pressed="false">S4</button>
     </div>
     <div class="scroll" id="tableRegion" role="region" aria-label="Salon antrenmanları ağırlık tablosu" tabindex="0"></div>
-    <div class="legend"><span><i class="easy"></i>Kolay</span><span><i class="medium"></i>Orta</span><span><i class="hard"></i>Zor</span></div>
+    <div class="legend"><span class="easy">Kolay</span><span class="medium">Orta</span><span class="hard">Zor</span></div>
   </main>
   <script>["../02-gunluk/gunlukverileri.js","../04-egzersizler/kodlar.js"].forEach(function(y){document.write('<script src="'+y+'?v='+Date.now()+'"><\/script>')});</script>
   <script>
@@ -67,7 +66,8 @@
       const region=document.getElementById("tableRegion"),filters=document.getElementById("filters");
       let selected="Tümü";
       const months=["Oca","Şub","Mar","Nis","May","Haz","Tem","Ağu","Eyl","Eki","Kas","Ara"];
-      function dateLabel(iso){const p=iso.split("-");return Number(p[2])+" "+months[Number(p[1])-1]+" "+p[0].slice(2)}
+      function dateLabel(iso,showYear){const p=iso.split("-");return Number(p[2])+" "+months[Number(p[1])-1]+(showYear?" "+p[0].slice(2):"")}
+      function weightLabel(weight){const match=(weight||"").match(/(\d+(?:[,.]\d+)?)\s*kg\b/i);return match?match[1]+" kg":(weight||"—")}
       function difficulty(record,all){
         if(["Kolay","Orta","Zor"].includes(record.zorluk))return record.zorluk;
         const result=gunlukZorluk(record,all);
@@ -80,11 +80,12 @@
         const records=all.filter(function(r){return /^S[1-4]$/.test(r.antrenman)&&(selected==="Tümü"||r.antrenman===selected)&&r.gun&&r.egzersiz});
         if(!records.length){region.innerHTML='<p class="empty">Bu antrenman için günlük kaydı yok.</p>';return}
         const dates=[...new Set(records.map(function(r){return r.gun}))].sort().reverse();
+        const showYear=new Set(dates.map(function(d){return d.slice(0,4)})).size>1;
         const names=[...new Set(records.map(function(r){return egzersizAdi(r.egzersiz)}))].sort(function(a,b){return a.localeCompare(b,"tr")});
         const cells=new Map();
         records.forEach(function(r){const key=egzersizAdi(r.egzersiz)+"\u0000"+r.gun;if(!cells.has(key))cells.set(key,[]);cells.get(key).push(r)});
         let out='<table><thead><tr><th scope="col">Hareket</th>';
-        dates.forEach(function(d){out+='<th scope="col"><a class="date-link" href="../02-gunluk/?gun='+encodeURIComponent(d)+'" aria-label="'+gunlukKacis(gunlukTarihEtiketi(d))+' günlüğünü aç">'+dateLabel(d)+'</a></th>'});
+        dates.forEach(function(d){out+='<th scope="col"><a class="date-link" href="../02-gunluk/?gun='+encodeURIComponent(d)+'" aria-label="'+gunlukKacis(gunlukTarihEtiketi(d))+' günlüğünü aç">'+dateLabel(d,showYear)+'</a></th>'});
         out+='</tr></thead><tbody>';
         names.forEach(function(name){
           out+='<tr><th scope="row"><a class="exercise-link" href="../04-egzersizler/?egzersiz='+encodeURIComponent(name)+'">'+gunlukKacis(name)+'</a></th>';
@@ -93,8 +94,9 @@
             out+='<td>';
             list.forEach(function(r){
               const level=difficulty(r,all),kind=level==="Kolay"?"easy":level==="Orta"?"medium":level==="Zor"?"hard":"unknown";
-              const label=r.agirlik||"—";
-              out+='<span class="entry '+kind+'" title="'+gunlukKacis(level||"Zorluk belirtilmedi")+'">'+gunlukKacis(label)+'</span>';
+              const label=weightLabel(r.agirlik);
+              const detail=[r.agirlik||"Ağırlık belirtilmedi",level||"Zorluk belirtilmedi"].join(" · ");
+              out+='<span class="entry '+kind+'" title="'+gunlukKacis(detail)+'">'+gunlukKacis(label)+'</span>';
             });
             out+='</td>';
           });
