@@ -6,11 +6,12 @@ Canlı site: https://melihmertoskay.github.io/antrenman-notlarim/
 
 ## Bölümler
 
-- **Ana Sayfa:** Diğer dört bölüme yönlendirir.
+- **Ana Sayfa:** Diğer beş bölüme yönlendirir.
 - **Program:** Günlere göre hedeflenen antrenmanları gösterir. Aktif plan 9–26 Eylül 2026 arasındaki üç haftayı kapsar; ilk hafta 10 günlük aradan kontrollü dönüş olarak düzenlenmiştir.
 - **Günlük:** Antrenman günlerini tarih satırlarında listeler. Bir satır seçildiğinde egzersiz, yük, set/tekrar ve notları içeren tarih başlıklı kart popup olarak açılır; kayıt ekleme, düzenleme ve silme arayüzü korunur; yeni kayıtta zorluk seviyesi de seçilebilir.
 - **Antrenmanlar:** Salon, ekipmansız ve yüzme antrenman kartlarını listeler. S1–S4 tablolarındaki `Son ağırlık` sütunu her egzersizin en yeni kayıtlı yükünü gösterir. Tüm antrenman kartlarındaki `Zorluk` sütunu son seviyeyi (`Kolay`, `Orta`, `Zor`) ve aynı egzersizin art arda bu seviyede çalışıldığı gün sayısını gösterir (`2 × Orta` gibi). Önceki notlardan çıkarılan seviyeler `Tahmini` olarak işaretlenir; kayıt olmayan hareketlerde `Kayıt yok` görünür.
 - **Egzersizler:** Kodlu egzersiz kartlarını; yapılış, çalışan kaslar, dikkat noktaları, görsel ve geçmiş yük bilgisiyle gösterir.
+- **Tablo:** S1–S4 salon antrenmanlarının günlükte kayıtlı hareketlerini satırlarda, günleri sütunlarda gösterir. Kesişimlerde kayıtlı yükler zorluklarına göre yeşil (Kolay), sarı (Orta), kırmızı (Zor) renktedir. Belirlenemeyen zorluk nötr kalır. S1–S4 ve Tümü filtreleri bulunur; hareket başlığı egzersiz kartını, tarih başlığı ilgili günlük kartını açar. Yeni kayıtlar tarayıcıdaki günlük verisinden okunur.
 
 ## Dosya düzeni
 
@@ -26,6 +27,7 @@ index.html                              Ana sayfa
 04-egzersizler/egzersizverileri.js      Egzersiz açıklamaları ve görsel eşlemeleri
 04-egzersizler/kodlar.js                Egzersiz kodları ve eski ad eşlemeleri
 04-egzersizler/gorseller/                Egzersiz görselleri
+05-tablo/index.html                     Salon antrenmanları ağırlık tablosu
 ```
 
 ## Temel kavramlar
