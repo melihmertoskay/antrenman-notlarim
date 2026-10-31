@@ -8,7 +8,7 @@
   <style>
     :root{--bg:#f4f2ec;--card:#fffefa;--text:#22241f;--muted:#73766f;--line:#ddd9cf;--accent:#285e49;--soft:#e5eee9}
     *{box-sizing:border-box}
-    body{min-width:320px;margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+    body{min-width:320px;margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}body.modal-open{overflow:hidden}
     a{text-decoration:none;color:inherit}
     button{font:inherit}
     .topbar{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);background:rgba(244,242,236,.96)}
@@ -33,7 +33,7 @@
     tbody td{min-width:68px;padding:3px 2px;font-size:.72rem}
     .date-link,.exercise-link{display:block;width:100%;border:0;background:none;color:inherit;cursor:pointer}
     .date-link{padding:3px 1px;color:var(--accent);font-size:.7rem;font-weight:750;white-space:nowrap}
-    .exercise-link{text-align:left;font-size:inherit;font-weight:inherit;line-height:1.35}
+    .exercise-link{text-align:left;font-size:inherit;font-weight:inherit;line-height:1.35}.exercise-code{display:inline-block;margin-right:5px;color:var(--accent);font-weight:800}
     .date-link:hover,.exercise-link:hover{text-decoration:underline}
     .entry{display:block;font-weight:750;line-height:1.3;white-space:nowrap}
     .entry+.entry{margin-top:3px}
@@ -44,6 +44,29 @@
     .empty{padding:24px;color:var(--muted);font-size:.88rem}
     .legend{display:flex;flex-wrap:wrap;gap:12px;margin:9px 2px 0;font-size:.72rem}
     .legend .easy{color:#277747}.legend .medium{color:#9a7009}.legend .hard{color:#b34038}
+    .modal{position:fixed;inset:0;z-index:40;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(24,27,23,.55)}
+    .modal.open{display:flex}
+    .dialog{width:min(100%,640px);max-height:88vh;overflow:auto;border-radius:18px;background:var(--card);box-shadow:0 24px 80px #0004}
+    .dialog-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px;border-bottom:1px solid var(--line)}
+    .dialog-head h2{margin:0;font-size:1.16rem;line-height:1.3}
+    .dialog-close{display:grid;flex:none;width:36px;height:36px;place-items:center;border:1px solid var(--line);border-radius:50%;background:none;color:var(--text);font-size:1.2rem;cursor:pointer}
+    .detail-body{padding:18px 20px;color:#4d514b;font-size:.88rem}
+    .detail-body h3{margin:0 0 5px;color:var(--accent);font-size:.73rem;letter-spacing:.05em;text-transform:uppercase}
+    .detail-body p{margin:0;line-height:1.55}
+    .detail-body section{margin-bottom:17px}
+    .detail-body .image{display:block;width:100%;height:auto;margin-bottom:18px;border:1px solid var(--line);border-radius:12px}
+    .detail-body .meta{margin-bottom:17px;color:var(--muted)}
+    .detail-body .history{margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+    .detail-body .history h3{color:var(--text);font-size:.84rem;letter-spacing:0;text-transform:none}
+    .history-item{padding:8px 0;border-top:1px solid #ebe8e0}
+    .history-note{margin-top:4px!important;color:var(--muted);font-size:.8rem}
+    .day-table{width:100%;min-width:0;border-collapse:collapse;table-layout:auto}
+    .day-table th,.day-table td{position:static;width:auto;min-width:0;max-width:none;height:auto;padding:8px 5px;border:0;border-bottom:1px solid #ebe8e0;background:none;text-align:left;vertical-align:top;font-size:.82rem;white-space:normal}
+    .day-table th{color:var(--muted);font-size:.68rem}
+    .day-table th:first-child,.day-table td:first-child{width:42%}
+    .day-table .difficulty{display:block;margin-top:3px;color:var(--muted);font-size:.74rem}
+    .day-notes{padding-top:13px}
+    .day-notes p+p{margin-top:7px}
     @media(max-width:560px){main{margin-top:12px}thead th:first-child,tbody th{width:112px;min-width:112px;max-width:112px}thead th:not(:first-child),tbody td{min-width:64px}tbody th{padding:4px 5px;font-size:.7rem}tbody td{font-size:.69rem}}
   </style>
 </head>
@@ -60,10 +83,12 @@
     <div class="scroll" id="tableRegion" role="region" aria-label="Salon antrenmanları ağırlık tablosu" tabindex="0"></div>
     <div class="legend"><span class="easy">Kolay</span><span class="medium">Orta</span><span class="hard">Zor</span></div>
   </main>
-  <script>["../02-gunluk/gunlukverileri.js","../04-egzersizler/kodlar.js"].forEach(function(y){document.write('<script src="'+y+'?v='+Date.now()+'"><\/script>')});</script>
+  <div class="modal" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailTitle"><div class="dialog"><div class="dialog-head"><h2 id="detailTitle"></h2><button class="dialog-close" id="detailClose" type="button" aria-label="Kapat">×</button></div><div class="detail-body" id="detailBody"></div></div></div>
+  <script>["../02-gunluk/gunlukverileri.js","../04-egzersizler/egzersizverileri.js","../04-egzersizler/kodlar.js"].forEach(function(y){document.write('<script src="'+y+'?v='+Date.now()+'"><\/script>')});</script>
   <script>
     (function(){
-      const region=document.getElementById("tableRegion"),filters=document.getElementById("filters");
+      const region=document.getElementById("tableRegion"),filters=document.getElementById("filters"),modal=document.getElementById("detailModal"),modalTitle=document.getElementById("detailTitle"),modalBody=document.getElementById("detailBody");
+      let popupOpen=false;
       let selected="Tümü";
       const months=["Oca","Şub","Mar","Nis","May","Haz","Tem","Ağu","Eyl","Eki","Kas","Ara"];
       function dateLabel(iso,showYear){const p=iso.split("-");return Number(p[2])+" "+months[Number(p[1])-1]+(showYear?" "+p[0].slice(2):"")}
@@ -79,16 +104,16 @@
         const all=gunlukKayitlariniGetir();
         const records=all.filter(function(r){return /^S[1-4]$/.test(r.antrenman)&&(selected==="Tümü"||r.antrenman===selected)&&r.gun&&r.egzersiz});
         if(!records.length){region.innerHTML='<p class="empty">Bu antrenman için günlük kaydı yok.</p>';return}
-        const dates=[...new Set(records.map(function(r){return r.gun}))].sort().reverse();
+        const dates=[...new Set(records.map(function(r){return r.gun}))].sort();
         const showYear=new Set(dates.map(function(d){return d.slice(0,4)})).size>1;
         const names=[...new Set(records.map(function(r){return egzersizAdi(r.egzersiz)}))].sort(function(a,b){return a.localeCompare(b,"tr")});
         const cells=new Map();
         records.forEach(function(r){const key=egzersizAdi(r.egzersiz)+"\u0000"+r.gun;if(!cells.has(key))cells.set(key,[]);cells.get(key).push(r)});
         let out='<table><thead><tr><th scope="col">Hareket</th>';
-        dates.forEach(function(d){out+='<th scope="col"><a class="date-link" href="../02-gunluk/?gun='+encodeURIComponent(d)+'" aria-label="'+gunlukKacis(gunlukTarihEtiketi(d))+' günlüğünü aç">'+dateLabel(d,showYear)+'</a></th>'});
+        dates.forEach(function(d){out+='<th scope="col"><button type="button" class="date-link" data-day="'+d+'" aria-label="'+gunlukKacis(gunlukTarihEtiketi(d))+' günlüğünü aç">'+dateLabel(d,showYear)+'</button></th>'});
         out+='</tr></thead><tbody>';
         names.forEach(function(name){
-          out+='<tr><th scope="row"><a class="exercise-link" href="../04-egzersizler/?egzersiz='+encodeURIComponent(name)+'">'+gunlukKacis(name)+'</a></th>';
+          out+='<tr><th scope="row"><button type="button" class="exercise-link" data-exercise="'+encodeURIComponent(name)+'"><span class="exercise-code">'+gunlukKacis(EGZERSIZ_KODLARI[name]||"–")+'</span>'+gunlukKacis(name)+'</button></th>';
           dates.forEach(function(d){
             const list=cells.get(name+"\u0000"+d)||[];
             out+='<td>';
@@ -103,6 +128,7 @@
           out+='</tr>';
         });
         region.innerHTML=out+'</tbody></table>';
+        region.scrollLeft=region.scrollWidth;
       }
       filters.addEventListener("click",function(event){
         const button=event.target.closest("[data-filter]");
@@ -112,6 +138,63 @@
         region.scrollLeft=0;
         render();
       });
+      function openPopup(title,html){
+        modalTitle.textContent=title;
+        modalBody.innerHTML=html;
+        if(!popupOpen){history.pushState({tabloPopup:true},"",location.href);popupOpen=true}
+        modal.classList.add("open");
+        document.body.classList.add("modal-open");
+        document.getElementById("detailClose").focus();
+      }
+      function closePopup(){
+        modal.classList.remove("open");
+        document.body.classList.remove("modal-open");
+        popupOpen=false;
+      }
+      function requestClose(){
+        if(history.state&&history.state.tabloPopup)history.back();
+        else closePopup();
+      }
+      function openExercise(name){
+        const info=EGZERSIZLER[name];
+        if(!info)return;
+        const image=EGZERSIZ_GORSELLERI[name];
+        const records=gunlukKayitlariniGetir().filter(function(r){return egzersizAdi(r.egzersiz)===name}).sort(function(a,b){return b.gun.localeCompare(a.gun)});
+        let html=image?'<img class="image" src="'+image+'" alt="'+gunlukKacis(name)+' hareketini ve çalışan kasları gösteren görsel">':"";
+        [["Nasıl yapılır?",info.application],["Dikkat",info.attention],["Çalışan kaslar",info.muscles],["Daha kolay",info.easier]].forEach(function(item){
+          html+='<section><h3>'+item[0]+'</h3><p>'+gunlukKacis(item[1]||"")+'</p></section>';
+        });
+        html+='<div class="history"><h3>Günlük kayıtları</h3>';
+        if(!records.length)html+='<p>Henüz kayıt yok.</p>';
+        records.forEach(function(r){
+          html+='<div class="history-item">'+gunlukKacis(gunlukTarihEtiketi(r.gun))+' · '+gunlukKacis(r.antrenman)+(r.agirlik?' · '+gunlukKacis(r.agirlik):"")+(r.setTekrar?' · '+gunlukKacis(r.setTekrar):"")+(r.zorluk?' · '+gunlukKacis(r.zorluk):"")+(r.aciklama?'<p class="history-note">'+gunlukKacis(r.aciklama)+'</p>':"")+'</div>';
+        });
+        openPopup((EGZERSIZ_KODLARI[name]||"")+" - "+name,html+'</div>');
+      }
+      function openDay(day){
+        const records=gunlukKayitlariniGetir().filter(function(r){return r.gun===day});
+        if(!records.length)return;
+        const workouts=[...new Set(records.map(function(r){return r.antrenman}))];
+        const notes=[...new Set(records.map(function(r){return r.aciklama}).filter(Boolean))];
+        let html='<p class="meta">'+gunlukKacis(workouts.map(function(code){return code+" · "+(ANTRENMAN_ADI[code]||"")}).join(" · "))+'</p>';
+        html+='<table class="day-table"><thead><tr><th>Hareket</th><th>Ağırlık</th><th>Tekrar</th></tr></thead><tbody>';
+        records.forEach(function(r){
+          html+='<tr><td>'+gunlukKacis(egzersizAdi(r.egzersiz))+'<span class="difficulty">'+gunlukKacis(r.zorluk||gunlukZorluk(r,records).seviye)+'</span></td><td>'+gunlukKacis(r.agirlik||"—")+'</td><td>'+gunlukKacis(r.setTekrar||"—")+'</td></tr>';
+        });
+        html+='</tbody></table>';
+        if(notes.length)html+='<div class="day-notes"><h3>Notlar</h3>'+notes.map(function(note){return '<p>'+gunlukKacis(note)+'</p>'}).join("")+'</div>';
+        openPopup(gunlukTarihEtiketi(day),html);
+      }
+      region.addEventListener("click",function(event){
+        const exercise=event.target.closest("[data-exercise]");
+        const day=event.target.closest("[data-day]");
+        if(exercise)openExercise(decodeURIComponent(exercise.dataset.exercise));
+        else if(day)openDay(day.dataset.day);
+      });
+      document.getElementById("detailClose").addEventListener("click",requestClose);
+      modal.addEventListener("click",function(event){if(event.target===modal)requestClose()});
+      document.addEventListener("keydown",function(event){if(event.key==="Escape"&&popupOpen)requestClose()});
+      addEventListener("popstate",function(){if(popupOpen&&!(history.state&&history.state.tabloPopup))closePopup()});
       render();
     })();
   </script>
