@@ -113,11 +113,13 @@ const GUNLUK_BASLANGIC=[
   {"id":"2026-10-29-s1-dambil-overhead-triceps-extension","gun":"2026-10-29","antrenman":"S1","egzersiz":"Dambıl overhead triceps extension","agirlik":"10 kg","setTekrar":"","zorluk":"Orta","aciklama":"Önceki S1 ile aynı ağırlığı kullandım; orta geçti. Bu günün set ve tekrar sayısı belirtilmedi."},
   {"id":"2026-10-30-s2-tek-kol-kablo-row","gun":"2026-10-30","antrenman":"S2","egzersiz":"Tek kol kablo row","agirlik":"Makinede 18 kg","setTekrar":"","zorluk":"Orta","aciklama":"Alt makarada tek kol çalıştım. Her kolun set ve tekrar sayısı bildirilmedi; orta zorlukta geçti."},
   {"id":"2026-10-30-s2-dambil-reverse-fly","gun":"2026-10-30","antrenman":"S2","egzersiz":"Dambıl reverse fly","agirlik":"Her elde 5 kg","setTekrar":"","zorluk":"Kolay","aciklama":"Kolay geçti."},
-  {"id":"2026-10-30-s2-dambil-pullover","gun":"2026-10-30","antrenman":"S2","egzersiz":"Dambıl pullover","agirlik":"15 kg","setTekrar":"","zorluk":"Zor","aciklama":"Zor geçti."}
+  {"id":"2026-10-30-s2-dambil-pullover","gun":"2026-10-30","antrenman":"S2","egzersiz":"Dambıl pullover","agirlik":"15 kg","setTekrar":"","zorluk":"Zor","aciklama":"Zor geçti."},
+  {"id":"2026-10-30-s2-dambil-hammer-curl","gun":"2026-10-30","antrenman":"S2","egzersiz":"Dambıl hammer curl","agirlik":"Her elde 7 kg","setTekrar":"","zorluk":"Orta","aciklama":"Önceki S2 antrenmanındaki çalışma ağırlığı ve zorluğu ile yapıldı."},
+  {"id":"2026-10-30-s2-dambil-biceps-curl","gun":"2026-10-30","antrenman":"S2","egzersiz":"Dambıl biceps curl","agirlik":"Her elde 7 kg","setTekrar":"","zorluk":"Orta","aciklama":"Önceki S2 antrenmanındaki çalışma ağırlığı ve zorluğu ile yapıldı."}
 ];
 
 const GUNLUK_DEPOLAMA_ANAHTARI="antrenman-notlarim-gunluk-v1";
-const GUNLUK_BASLANGIC_SURUMU="2026-10-30-s2-progress";
+const GUNLUK_BASLANGIC_SURUMU="2026-10-30-s2-complete";
 const GUNLUK_ZORUNLU_GUNCELLEME_IDLERI=new Set([
   "2026-09-20-s1-dambil-bench-press",
   "2026-09-20-s1-dambil-lateral-raise",
