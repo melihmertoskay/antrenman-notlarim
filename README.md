@@ -2,7 +2,9 @@
 
 Kişisel antrenman programını, 40 dakikalık antrenman kartlarını, egzersiz açıklamalarını ve günlük kayıtlarını bir arada tutan sade bir GitHub Pages sitesidir.
 
-Canlı site: https://melihmertoskay.github.io/antrenman-notlarim/
+Yeni site: https://antrenman-notlarim.melihmertoskay.chatgpt.site/
+
+GitHub Pages adresinde yalnızca taşınma duyurusu gösterilir. Eski bölüm adresleri bu duyuruya yönlendirilir. HTML, günlük veri dosyaları ve görseller depoda korunur; mevcut tarayıcıya özel günlük verileri eski kök sayfadaki yedek bağlantısıyla indirilebilir. Yeni geliştirmeler ChatGPT Sites kaynağında yapılır.
 
 ## Bölümler
 
@@ -102,4 +104,4 @@ Program ve Antrenmanlar sayfasındaki bir antrenmana basıldığında antrenman 
 
 ## Yayınlama ve bakım
 
-Site `main` dalından GitHub Pages ile yayınlanır. HTML, CSS ve JavaScript doğrudan tarayıcıda çalışır. Klasör yapısı, veri modeli, adlandırma veya ortak davranışlar değiştiğinde README aynı commit içinde güncellenmelidir.
+GitHub Pages `main` dalından taşınma duyurusunu yayınlar; asıl uygulama ChatGPT Sites üzerindedir. HTML, CSS ve JavaScript doğrudan tarayıcıda çalışır. Klasör yapısı, veri modeli, adlandırma veya ortak davranışlar değiştiğinde README aynı commit içinde güncellenmelidir.

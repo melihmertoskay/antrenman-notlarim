@@ -4,183 +4,40 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f4f2ec">
-  <title>Antrenman Notlarım</title>
+  <title>Antrenman Notlarım taşındı</title>
   <style>
-    :root {
-      --background: #f4f2ec;
-      --card: #fffefa;
-      --text: #22241f;
-      --muted: #73766f;
-      --line: #ddd9cf;
-      --green: #285e49;
-      --green-soft: #e2ece6;
-      --rust-soft: #f1e4d8;
-      --blue-soft: #e0ebef;
-      --purple-soft: #ebe5f1;
-    }
-
+    :root { font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #22241f; background: #f4f2ec; }
     * { box-sizing: border-box; }
-
-    body {
-      min-width: 320px;
-      min-height: 100vh;
-      margin: 0;
-      background: var(--background);
-      color: var(--text);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    button { font: inherit; }
-    a { text-decoration: none; }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      border-bottom: 1px solid var(--line);
-      background: rgba(244, 242, 236, .96);
-      backdrop-filter: blur(12px);
-    }
-
-    .topbar-inner {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      width: min(100% - 24px, 860px);
-      min-height: 56px;
-      margin: auto;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-    .topbar-inner::-webkit-scrollbar { display: none; }
-
-    .nav-link {
-      flex: 0 0 auto;
-      padding: 8px 12px;
-      border-radius: 8px;
-      color: var(--muted);
-      font-size: .85rem;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-    .nav-link:hover { color: var(--text); background: #ebe8e0; }
-    .nav-link.active { color: var(--green); background: var(--green-soft); }
-
-    main {
-      width: min(100% - 24px, 860px);
-      margin: 28px auto 56px;
-    }
-
-    .cards {
-      display: grid;
-      gap: 14px;
-    }
-
-    .section-card {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      width: 100%;
-      min-height: 150px;
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      color: var(--text);
-      text-align: left;
-      box-shadow: 0 10px 34px rgba(45, 48, 41, .05);
-    }
-
-    .section-card:disabled {
-      cursor: default;
-      opacity: 1;
-    }
-
-    a.section-card {
-      cursor: pointer;
-      transition: transform .18s ease, box-shadow .18s ease;
-    }
-
-    a.section-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 40px rgba(45, 48, 41, .09);
-    }
-
-    .program { background: var(--rust-soft); }
-    .workouts { background: var(--green-soft); border-color: rgba(40, 94, 73, .25); }
-    .journal { background: var(--blue-soft); }
-    .exercises { background: var(--purple-soft); }
-    .table-card { background: #eee9db; }
-
-    h1 {
-      margin: 0 0 8px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.65rem, 5vw, 2.2rem);
-      font-weight: 500;
-      letter-spacing: -.025em;
-    }
-
-    p {
-      max-width: 610px;
-      margin: 0;
-      color: #565b54;
-      font-size: .9rem;
-      line-height: 1.55;
-    }
-
-    .arrow {
-      display: grid;
-      width: 38px;
-      height: 38px;
-      margin-left: 20px;
-      place-items: center;
-      border: 1px solid rgba(34, 36, 31, .17);
-      border-radius: 50%;
-      color: var(--text);
-      font-size: 1rem;
-    }
-
-    @media (max-width: 520px) {
-      main { margin-top: 18px; }
-      .section-card { min-height: 140px; padding: 20px; }
-      .arrow { width: 34px; height: 34px; margin-left: 12px; }
-    }
+    body { min-height: 100vh; margin: 0; display: grid; place-items: center; padding: 24px; }
+    main { width: min(100%, 480px); padding: 32px; border: 1px solid #ddd9cf; border-radius: 18px; background: #fffefa; box-shadow: 0 10px 34px #2d30290d; }
+    h1 { margin: 0 0 12px; font-family: Georgia, serif; font-size: clamp(1.6rem, 6vw, 2rem); font-weight: 500; }
+    p { margin: 0 0 24px; color: #565b54; line-height: 1.55; }
+    .go { display: block; padding: 14px 18px; border-radius: 10px; background: #285e49; color: white; text-align: center; font-weight: 650; text-decoration: none; }
+    .go:hover { background: #214d3c; }
+    #backup { display: none; margin: 20px auto 0; padding: 0; border: 0; background: none; color: #58625a; text-decoration: underline; cursor: pointer; font: inherit; font-size: .85rem; }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <nav class="topbar-inner">
-      <a class="nav-link  active" href="index.html">Ana Sayfa</a>
-      <a class="nav-link " href="01-program/">Program</a>
-      <a class="nav-link " href="02-gunluk/">Günlük</a>
-      <a class="nav-link " href="03-antrenmanlar/">Antrenmanlar</a>
-      <a class="nav-link " href="04-egzersizler/">Egzersizler</a>
-      <a class="nav-link " href="05-tablo/">Tablo</a>
-    </nav>
-  </header>
-
   <main>
-    <section class="cards" aria-label="Antrenman notları bölümleri">
-      <a class="section-card program" href="01-program/">
-        <span><h1>Program</h1><p>Gün gün hedeflenen antrenman kartları ve haftalık çalışma düzeni.</p></span>
-        <span class="arrow" aria-hidden="true">→</span>
-      </a>
-      <a class="section-card journal" href="02-gunluk/">
-        <span><h1>Günlük</h1><p>Yapılan antrenmanlar, kullanılan ağırlıklar ve antrenman notları.</p></span>
-        <span class="arrow" aria-hidden="true">→</span>
-      </a>
-      <a class="section-card workouts" href="03-antrenmanlar/">
-        <span><h1>Antrenmanlar</h1><p>Salon, ev ve yüzme için hazırlanan 40 dakikalık antrenman kartları.</p></span>
-        <span class="arrow" aria-hidden="true">→</span>
-      </a>
-      <a class="section-card exercises" href="04-egzersizler/">
-        <span><h1>Egzersizler</h1><p>Hareket açıklamaları ve son kullanılan ağırlıklar.</p></span>
-        <span class="arrow" aria-hidden="true">→</span>
-      </a>
-      <a class="section-card table-card" href="05-tablo/">
-        <span><h1>Tablo</h1><p>Salon hareketlerinin günlere göre ağırlık ve zorlukları.</p></span>
-        <span class="arrow" aria-hidden="true">→</span>
-      </a>
-    </section>
+    <h1>Antrenman Notlarım taşındı</h1>
+    <p>Program, günlük, antrenmanlar ve egzersizler artık yeni adreste.</p>
+    <a class="go" href="https://antrenman-notlarim.melihmertoskay.chatgpt.site/">Yeni siteye git →</a>
+    <button id="backup" type="button">Bu tarayıcıdaki günlük yedeğini indir</button>
   </main>
+  <script>
+    const anahtar = "antrenman-notlarim-gunluk-v1";
+    const kayit = localStorage.getItem(anahtar);
+    const yedek = document.getElementById("backup");
+    if (kayit) yedek.style.display = "block";
+    yedek.addEventListener("click", () => {
+      const dosya = new Blob([kayit], { type: "application/json" });
+      const adres = URL.createObjectURL(dosya);
+      const baglanti = document.createElement("a");
+      baglanti.href = adres;
+      baglanti.download = "antrenman-gunluk-yedegi.json";
+      baglanti.click();
+      setTimeout(() => URL.revokeObjectURL(adres), 1000);
+    });
+  </script>
 </body>
 </html>
